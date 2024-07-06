@@ -1,5 +1,5 @@
 const { check } = require("express-validator");
-const validatorMiddleWare = require("../../middlewares/validatorMiddleWare");
+const validatorMiddleWare = require("../../../middlewares/validatorMiddleWare");
 
 exports.getipValidator = [
   check("id").isMongoId().withMessage("Invalid ip ID Formate"),
@@ -7,8 +7,9 @@ exports.getipValidator = [
 ];
 
 exports.createipValidator = [
-  check("value").notEmpty().withMessage("ip address Required"),
-  check("port").notEmpty().withMessage("ip port Required"),
+  check("value").notEmpty().withMessage("ip value Required"),
+  check("location").notEmpty().withMessage("ip location Required"),
+  check("description").notEmpty().withMessage("ip description Required"),
   validatorMiddleWare,
 ];
 
