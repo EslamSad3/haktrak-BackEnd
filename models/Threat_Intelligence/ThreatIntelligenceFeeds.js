@@ -8,7 +8,7 @@ const ThreatIntelligenceFeedsSchema = new mongoose.Schema(
     },
     severity: {
       type: String,
-      enum: ["Low", "Medium", "High", "Critical"],
+      enum: ["low", "medium", "high", "critical"],
       required: [true, "Threat Intelligence Feed severity required"],
     },
     source: {

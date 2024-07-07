@@ -10,6 +10,7 @@ const leakedCredentialsRoute = require("./Dark_Web_Monitoring/leakedCredentialsR
 const aptFeedsRoute = require("./Threat_Intelligence/aptFeedsRoute");
 const iocsRoute = require("./Threat_Intelligence/iocsRoute");
 const suspiciousIPsRoute = require("./Threat_Intelligence/suspiciousIPsRoute");
+const threatIntelligenceFeedsRoute = require("./Threat_Intelligence/threatIntelligenceFeedsRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -22,14 +23,17 @@ const mountRoutes = (app) => {
   app.use("/api/assets/portals", portalsRoute);
 
   // dark-web-monitoring
-  app.use("/api/dark-web-monitoring/darkWebMentions", darkWebMentionsRoute);
-  app.use("/api/dark-web-monitoring/leakedCredentials", leakedCredentialsRoute);
+  app.use("/api/dark-web-monitoring/dark-web-mentions", darkWebMentionsRoute);
+  app.use("/api/dark-web-monitoring/leaked-credentials", leakedCredentialsRoute);
 
   // Threat Intelligence
-  app.use("/api/threat-intelligence/aptFeeds", aptFeedsRoute);
+  app.use("/api/threat-intelligence/apt-feeds", aptFeedsRoute);
   app.use("/api/threat-intelligence/iocs", iocsRoute);
-  app.use("/api/threat-intelligence/suspiciousips", suspiciousIPsRoute);
-
+  app.use("/api/threat-intelligence/suspicious-ips", suspiciousIPsRoute);
+  app.use(
+    "/api/threat-intelligence/threat-intelligence-feeds",
+    suspiciousIPsRoute
+  );
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
 };
