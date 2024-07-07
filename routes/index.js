@@ -9,6 +9,7 @@ const leakedCredentialsRoute = require("./Dark_Web_Monitoring/leakedCredentialsR
 // Threat Intelligence
 const aptFeedsRoute = require("./Threat_Intelligence/aptFeedsRoute");
 const iocsRoute = require("./Threat_Intelligence/iocsRoute");
+const suspiciousIPsRoute = require("./Threat_Intelligence/suspiciousIPsRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -27,6 +28,7 @@ const mountRoutes = (app) => {
   // Threat Intelligence
   app.use("/api/threat-intelligence/aptFeeds", aptFeedsRoute);
   app.use("/api/threat-intelligence/iocs", iocsRoute);
+  app.use("/api/threat-intelligence/suspiciousips", suspiciousIPsRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
