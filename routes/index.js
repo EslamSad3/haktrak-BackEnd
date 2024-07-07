@@ -6,6 +6,10 @@ const portalsRoute = require("./assets/portalsRoute");
 const darkWebMentionsRoute = require("./Dark_Web_Monitoring/darkWebMentionRoute");
 const leakedCredentialsRoute = require("./Dark_Web_Monitoring/leakedCredentialsRoute");
 
+// Threat Intelligence
+const aptFeedsRoute = require("./Threat_Intelligence/aptFeedsRoute");
+const iocsRoute = require("./Threat_Intelligence/iocsRoute");
+
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
@@ -19,6 +23,10 @@ const mountRoutes = (app) => {
   // dark-web-monitoring
   app.use("/api/dark-web-monitoring/darkWebMentions", darkWebMentionsRoute);
   app.use("/api/dark-web-monitoring/leakedCredentials", leakedCredentialsRoute);
+
+  // Threat Intelligence
+  app.use("/api/threat-intelligence/aptFeeds", aptFeedsRoute);
+  app.use("/api/threat-intelligence/iocs", iocsRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);

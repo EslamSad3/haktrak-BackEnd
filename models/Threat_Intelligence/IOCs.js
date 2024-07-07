@@ -4,7 +4,7 @@ const IOCsSchema = new mongoose.Schema(
   {
     iOCType: {
       type: String,
-      enum: ["Hash", "IP", "Domain", "URL"],
+      enum: ["hash", "ip", "domain", "url"],
       required: [true, "IOC iOCType required"],
     },
     indicatorValue: {

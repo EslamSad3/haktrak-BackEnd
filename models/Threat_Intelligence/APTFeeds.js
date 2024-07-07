@@ -4,20 +4,23 @@ const APTFeedsSchema = new mongoose.Schema(
   {
     aptGroupName: {
       type: String,
-      required: [true, "IP aptGroupName required"],
+      required: [true, "APTFeed aptGroupName required"],
     },
-    threatType: { type: String, required: [true, "IP threatType required"] },
-    ttps: { type: String, required: [true, "IP ttps required"] },
+    threatType: {
+      type: String,
+      required: [true, "APTFeed threatType required"],
+    },
+    ttps: { type: String, required: [true, "APTFeed ttps required"] },
     targetSectors: {
       type: String,
-      required: [true, "IP targetSectors required"],
+      required: [true, "APTFeed targetSectors required"],
     },
     geographicFocus: {
       type: String,
-      required: [true, "IP geographicFocus required"],
+      required: [true, "APTFeed geographicFocus required"],
     },
-    iocs: { type: String, required: [true, "IP iocs required"] },
-    source: { type: String, required: [true, "IP source required"] },
+    iocs: { type: String, required: [true, "APTFeed iocs required"] },
+    source: { type: String, required: [true, "APTFeed source required"] },
     description: {
       type: String,
       required: [true, "APTFeed description required"],
