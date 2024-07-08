@@ -21,6 +21,9 @@ const attackSurfaceRoute = require("./attackSurfaceRoute");
 // Brand Reputation
 const brandReputationRoute = require("./brandReputationRoute");
 
+// Vulnerabilities Intelligences
+const vulnerabilitiesIntelligencesRoute = require("./vulnerabilitiesIntelligencesRoute");
+
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
@@ -54,6 +57,11 @@ const mountRoutes = (app) => {
 
   // Brand Reputation
   app.use("/api/brand-reputation", brandReputationRoute);
+  // vulnerabilities intelligences
+  app.use(
+    "/api/vulnerabilities-intelligences",
+    vulnerabilitiesIntelligencesRoute
+  );
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
