@@ -5,28 +5,29 @@ const portalsRoute = require("./assets/portalsRoute");
 // dark-web-monitoring
 const darkWebMentionsRoute = require("./Dark_Web_Monitoring/darkWebMentionRoute");
 const leakedCredentialsRoute = require("./Dark_Web_Monitoring/leakedCredentialsRoute");
-
 // Threat Intelligence
 const aptFeedsRoute = require("./Threat_Intelligence/aptFeedsRoute");
 const iocsRoute = require("./Threat_Intelligence/iocsRoute");
 const suspiciousIPsRoute = require("./Threat_Intelligence/suspiciousIPsRoute");
 const threatIntelligenceFeedsRoute = require("./Threat_Intelligence/threatIntelligenceFeedsRoute");
-
 // Account Take Over
 const accountTakeoverRoute = require("./accountTakeoverRoute");
-
 // Attck Surface
 const attackSurfaceRoute = require("./attackSurfaceRoute");
-
 // Brand Reputation
 const brandReputationRoute = require("./brandReputationRoute");
-
 // Vulnerabilities Intelligences
 const vulnerabilitiesIntelligencesRoute = require("./vulnerabilitiesIntelligencesRoute");
+// EDRXDRDetection
+const EDRXDRDetectionsRoute = require("./Detections/EDRXDRDetectionsRoute");
+// NDRDetection
+const NDRDetectionsRoute = require("./Detections/NDRDetectionsRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
+
+/**************************************mount Routes****************************************** */
 
 const mountRoutes = (app) => {
   // assets
@@ -62,6 +63,10 @@ const mountRoutes = (app) => {
     "/api/vulnerabilities-intelligences",
     vulnerabilitiesIntelligencesRoute
   );
+  // EDRXDR Detections
+  app.use("/api/detections/drxdr-detections", EDRXDRDetectionsRoute);
+  // NDR Detections
+  app.use("/api/detections/ndr-detections", NDRDetectionsRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
