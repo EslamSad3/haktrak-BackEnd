@@ -23,7 +23,7 @@ dbConnection();
 //Express app
 const app = express();
 app.use(express.json({ limit: "20kb" }));
-app.use(express.static(path.join(__dirname, "uploads")));
+app.use(express.static(path.join(__dirname, "uploads/screenshots")));
 app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
 
 app.use(
