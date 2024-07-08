@@ -1,40 +1,8 @@
-const multer = require("multer");
-const { v4: uuidv4 } = require("uuid");
 const AttackSurface = require("../models/AttackSurface");
 const factory = require("./handlersFactory");
-// const { uploadMixOfFiles } = require("../middlewares/uploadImagesMiddleWare");
+const { uploadSingleFile } = require("../middlewares/uploadImagesMiddleWare");
 
-// exports.uploadProductImages = uploadMixOfFiles([
-//   {
-//     name: "screenshot",
-//     maxCount: 1,
-//   },
-//   { name: "screenshots", maxCount: 4 },
-// ]);
-
-const multerStorage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/screenshots");
-  },
-
-  filename: function (req, file, cb) {
-    const ext = file.mimetype.split("/")[1];
-    const fileName = `AttackSurface-screenshot-${Date.now()}-${uuidv4()}.${ext}`;
-    req.body.screenshot = fileName;
-    cb(null, fileName);
-  },
-});
-
-const multerFilter = function fileFilter(req, file, cb) {
-  if (file.mimetype.startsWith("image")) {
-    cb(null, true);
-  } else {
-    cb(new ApiError("Only Images allowed", 400), false);
-  }
-};
-
-const upload = multer({ storage: multerStorage, fileFilter: multerFilter });
-exports.uploadScreenshot = upload.single("screenshot");
+exports.uploadScreenshot = uploadSingleFile("screenshot");
 // @desc      Create AttackSurface
 // @route     POST /api/attack-surface
 // @access    private
