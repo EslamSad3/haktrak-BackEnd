@@ -7,7 +7,6 @@ const {
   updateAttackSurface,
   deleteAttackSurface,
   uploadScreenshot,
-  resizeImage,
 } = require("../services/attackSurfaceServices");
 const {
   getAttackSurfaceValidator,
