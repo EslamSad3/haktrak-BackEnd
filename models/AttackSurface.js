@@ -7,7 +7,7 @@ const AttackSurfaceSchema = new mongoose.Schema(
       required: [true, "Attack Surface affectedSystems required"],
     },
     openPorts: {
-      type: String,
+      type: [String],
       required: [true, "Attack Surface openPorts required"],
     },
     services: {

@@ -15,6 +15,9 @@ const threatIntelligenceFeedsRoute = require("./Threat_Intelligence/threatIntell
 // Account Take Over
 const accountTakeoverRoute = require("./accountTakeoverRoute");
 
+// Attck Surface
+const attackSurfaceRoute = require("./attackSurfaceRoute");
+
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
@@ -43,6 +46,9 @@ const mountRoutes = (app) => {
 
   // Account Take Over
   app.use("/api/account-take-over", accountTakeoverRoute);
+  // Account Take Over
+  app.use("/api/attack-surface", attackSurfaceRoute);
+
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
 };
