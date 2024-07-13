@@ -9,7 +9,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const compression = require("compression");
 const helmet = require("helmet");
-const { limiter } = require("./middlewares/rateLimiterMiddleware");
+// const { limiter } = require("./middlewares/rateLimiterMiddleware");
 
 dotenv.config();
 const ApiError = require("./utils/apiError");
@@ -55,7 +55,7 @@ app.use(mongoSanitize());
 app.use(xss());
 
 // apply rate limite for all requests
-app.use("/api", limiter);
+// app.use("/api", limiter);
 
 // Mount Routes
 mountRoutes(app);
