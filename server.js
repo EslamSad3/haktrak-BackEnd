@@ -30,7 +30,7 @@ app.use(helmet.crossOriginEmbedderPolicy({ policy: "credentialless" }));
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://haktrak.vercel.app/",
   })
 );
 
