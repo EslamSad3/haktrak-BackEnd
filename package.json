@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "pro": "SET NODE_ENV=production & node server.js",
-    "vercel-build": "echo hello"
+    "pro": "SET NODE_ENV=production & node server.js"
   },
   "keywords": [],
   "author": "",
