@@ -16,7 +16,7 @@ const EDRXDRDetectionsSchema = new mongoose.Schema(
     },
     severity: {
       type: String,
-      enum: ["Low", "Medium", "High", "Critical"],
+      enum: ["low", "medium", "high", "critical"],
       required: [true, "EDRXDRDetection severity required"],
     },
     bu: { type: String, required: [true, "EDRXDRDetection bu required"] },

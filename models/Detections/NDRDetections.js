@@ -16,7 +16,7 @@ const NDRDetectionsSchema = new mongoose.Schema(
     },
     severity: {
       type: String,
-      enum: ["Low", "Medium", "High", "Critical"],
+      enum: ["low", "medium", "high", "critical"],
       required: [true, "NDRDetection severity required"],
     },
     bu: { type: String, required: [true, "NDRDetection bu required"] },
