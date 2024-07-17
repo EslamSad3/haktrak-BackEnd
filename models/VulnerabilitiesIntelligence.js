@@ -12,7 +12,7 @@ const VulnerabilitiesIntelligenceSchema = new mongoose.Schema(
     },
     severity: {
       type: String,
-      enum: ["Low", "Medium", "High", "Critical"],
+      enum: ["low", "medium", "high", "critical"],
       required: [true, "Vulnerabilities Intelligence severity required"],
     },
     affectedSystems: {
