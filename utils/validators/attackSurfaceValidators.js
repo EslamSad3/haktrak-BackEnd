@@ -17,9 +17,7 @@ exports.createAttackSurfacesValidator = [
   check("mitigationSteps")
     .notEmpty()
     .withMessage("AttackSurface mitigationSteps Required"),
-  check("screenshot")
-    .notEmpty()
-    .withMessage("AttackSurface screenshot Required"),
+
   validatorMiddleWare,
 ];
 

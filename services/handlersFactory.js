@@ -2,24 +2,26 @@ const asyncHandler = require("express-async-handler");
 const ApiError = require("../utils/apiError");
 const ApiFeatures = require("../utils/apiFeauters");
 const cloudinary = require("cloudinary");
+const dotenv = require("dotenv");
+dotenv.config();
 
-// cloudinary.config({
-//   cloud_name: process.env.CLOUD_MAME,
-//   api_key: process.env.CLOUD_API_KEY,
-//   api_secret: process.env.CLOUD_API_SECRET,
-// });
+cloudinary.config({
+  cloud_name: process.env.CLOUD_MAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+});
 
-// exports.cloudinaryImageUploadMethod = async (file) => {
-//   return new Promise((resolve) => {
-//     cloudinary.v2.uploader.upload(file, (err, res) => {
-//       console.log(err, 'err 15');
-//       if (err) return res.status(500).send('upload image error');
-//       resolve({
-//         res: res.secure_url,
-//       });
-//     });
-//   });
-// };
+exports.cloudinaryImageUploadMethod = async (file) => {
+  return new Promise((resolve) => {
+    cloudinary.v2.uploader.upload(file, (err, res) => {
+      if (err) return res.status(500).send("upload image error");
+      console.log(err, "err 15");
+      resolve({
+        res: res.secure_url,
+      });
+    });
+  });
+};
 
 exports.getOne = (Model, populationOpt) =>
   asyncHandler(async (req, res, next) => {
@@ -59,61 +61,16 @@ exports.getAll = (Model, modelname = "") =>
 
 exports.create = (Model) =>
   asyncHandler(async (req, res) => {
-    // if (req.file || req.files) {
-    //   const urlsOfImages = [];
-    //   if (req.files.images) {
-    //     const filesImages = req.files.images;
-    //     for (const file of filesImages) {
-    //       const { path } = file;
-    //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfImages.push(newPath);
-    //     }
-    //   }
-    //   const urlsOfImageCover = [];
-    //   if (req.files.imageCover) {
-    //     const files = req.files.imageCover;
-    //     for (const file of files) {
-    //       const { path } = file;
-    //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfImageCover.push(newPath);
-    //     }
-    //   }
+    let urlsOfscreenshot = {};
+    if (req.file) {
+      const { path } = req.file;
+      const newPath = await this.cloudinaryImageUploadMethod(path);
+      urlsOfscreenshot = newPath;
+    }
 
-    //   const urlsOfimage = [];
-    //   if (req.files.image) {
-    //     const files = req.files.image;
-    //     for (const file of files) {
-    //       const { path } = file;
-    //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfimage.push(newPath);
-    //     }
-    //     req.body.image = urlsOfimage[0]?.res || " ";
-    //   }
-
-    //   if (urlsOfImages) {
-    //     req.body.images = urlsOfImages.map((url) => url.res);
-    //   }
-    //   if (urlsOfImageCover) {
-    //     req.body.imageCover = urlsOfImageCover[0]?.res;
-    //   }
-    //   if (urlsOfimage) {
-    //     req.body.image = urlsOfimage[0]?.res;
-    //   }
-    // }
-
-    // if (req.body.colors) {
-    //   const colors = req.body.colors;
-    //   const newColors = colors.split(',');
-    //   req.body.colors = newColors;
-    //   console.log(req.body.colors, 'newColors');
-    // }
-
-    // if (req.body.sizes) {
-    //   const sizes = req.body.sizes;
-    //   const newsizes = sizes.split(',');
-    //   console.log(newsizes, 'Sizes');
-    //   req.body.sizes = newsizes;
-    // }
+    if (urlsOfscreenshot) {
+      req.body.screenshot = urlsOfscreenshot.res;
+    }
 
     const collection = await Model.create(req.body);
     res.status(201).json({ data: collection });
@@ -131,21 +88,21 @@ exports.updateOne = (Model) =>
     //       urlsOfImages.push(newPath);
     //     }
     //   }
-    //   const urlsOfImageCover = [];
-    //   if (req.files.imageCover) {
-    //     const files = req.files.imageCover;
+    //   const urlsOfscreenshot = [];
+    //   if (req.files.screenshot) {
+    //     const files = req.files.screenshot;
     //     for (const file of files) {
     //       const { path } = file;
     //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfImageCover.push(newPath);
+    //       urlsOfscreenshot.push(newPath);
     //     }
     //   }
 
     //   if (urlsOfImages) {
     //     req.body.images = urlsOfImages.map((url) => url.res);
     //   }
-    //   if (urlsOfImageCover) {
-    //     req.body.imageCover = urlsOfImageCover[0]?.res;
+    //   if (urlsOfscreenshot) {
+    //     req.body.screenshot = urlsOfscreenshot[0]?.res;
     //   }
     // }
     const document = await Model.findByIdAndUpdate(req.params.id, req.body, {
@@ -164,6 +121,18 @@ exports.updateOne = (Model) =>
 exports.deleteOne = (Model) =>
   asyncHandler(async (req, res, next) => {
     const { id } = req.params;
+
+    let urlsOfscreenshot = {};
+    if (req.file) {
+      const { path } = req.file;
+      const newPath = await this.cloudinaryImageUploadMethod(path);
+      urlsOfscreenshot = newPath;
+    }
+
+    if (urlsOfscreenshot) {
+      req.body.screenshot = urlsOfscreenshot.res;
+    }
+
     const collection = await Model.findByIdAndDelete(id);
     if (!collection) {
       return next(new ApiError(`No collection For This id ${id}`, 404));
