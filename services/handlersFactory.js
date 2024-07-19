@@ -78,33 +78,16 @@ exports.create = (Model) =>
 
 exports.updateOne = (Model) =>
   asyncHandler(async (req, res, next) => {
-    // if (req.file || req.files) {
-    //   const urlsOfImages = [];
-    //   if (req.files.images) {
-    //     const filesImages = req.files.images;
-    //     for (const file of filesImages) {
-    //       const { path } = file;
-    //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfImages.push(newPath);
-    //     }
-    //   }
-    //   const urlsOfscreenshot = [];
-    //   if (req.files.screenshot) {
-    //     const files = req.files.screenshot;
-    //     for (const file of files) {
-    //       const { path } = file;
-    //       const newPath = await this.cloudinaryImageUploadMethod(path);
-    //       urlsOfscreenshot.push(newPath);
-    //     }
-    //   }
+    let urlsOfscreenshot = {};
+    if (req.file) {
+      const { path } = req.file;
+      const newPath = await this.cloudinaryImageUploadMethod(path);
+      urlsOfscreenshot = newPath;
+    }
 
-    //   if (urlsOfImages) {
-    //     req.body.images = urlsOfImages.map((url) => url.res);
-    //   }
-    //   if (urlsOfscreenshot) {
-    //     req.body.screenshot = urlsOfscreenshot[0]?.res;
-    //   }
-    // }
+    if (urlsOfscreenshot) {
+      req.body.screenshot = urlsOfscreenshot.res;
+    }
     const document = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
