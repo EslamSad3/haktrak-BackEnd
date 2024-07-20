@@ -8,6 +8,7 @@ const AccountTakeoverSchema = new mongoose.Schema(
       required: [true, "Account Take over password required"],
     },
     url: { type: String, required: [true, "Account Take over url required"] },
+    bu: { type: String, required: [true, "Account Take over bu required"] },
     source: {
       type: String,
       required: [true, "Account Take over source required"],

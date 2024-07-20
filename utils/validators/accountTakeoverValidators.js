@@ -14,6 +14,7 @@ exports.createAccountTakeOversValidator = [
     .notEmpty()
     .withMessage("AccountTakeOver mitigationSteps Required"),
   check("source").notEmpty().withMessage("AccountTakeOver source Required"),
+  check("bu").notEmpty().withMessage("Account Take Over Bu Required"),
   validatorMiddleWare,
 ];
 
