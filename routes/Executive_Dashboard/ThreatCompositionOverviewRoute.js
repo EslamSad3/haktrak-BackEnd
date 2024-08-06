@@ -10,7 +10,9 @@ const {
 
 const router = express.Router();
 
-router.use(auth.protect, auth.allowedTo("user", "admin", "soc", "executive"));
+router.use(auth.protect);
+
+router.use(auth.allowedTo(["admin", "user", "soc", "executive"]));
 router.route("/").get(getThreatCompositionOverviews);
 
 router.use(auth.protect, auth.allowedTo("admin"));

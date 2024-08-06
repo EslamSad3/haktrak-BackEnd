@@ -9,11 +9,12 @@ const {
 } = require("../../services/Executive_Dashboard/NonComplianceGapsOverviewServices");
 
 const router = express.Router();
+router.use(auth.protect);
 
-router.use(auth.protect, auth.allowedTo("user", "admin", "soc", "executive"));
+router.use(auth.allowedTo(["admin", "user", "soc", "executive"]));
 router.route("/").get(getNonComplianceGapsOverviews);
 
-router.use(auth.protect, auth.allowedTo("admin"));
+router.use(auth.allowedTo("admin"));
 router.route("/:id").get(getNonComplianceGapsOverview);
 router.route("/").post(createNonComplianceGapsOverview);
 router

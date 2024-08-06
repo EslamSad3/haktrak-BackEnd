@@ -28,6 +28,7 @@ const SecurityPostureScoreRoute = require("./Executive_Dashboard/SecurityPosture
 const NonComplianceGapsOverviewRoute = require("./Executive_Dashboard/NonComplianceGapsOverviewRoute");
 const ThreatCompositionOverviewRoute = require("./Executive_Dashboard/ThreatCompositionOverviewRoute");
 const SecurityBreachIndicatorsRoute = require("./Executive_Dashboard/SecurityBreachIndicatorsRoute");
+const QuarterlyIncidentRoute = require("./Executive_Dashboard/QuarterlyIncidentRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -90,6 +91,10 @@ const mountRoutes = (app) => {
   app.use(
     "/api/executive-dashboard/security-breach-indicators",
     SecurityBreachIndicatorsRoute
+  );
+  app.use(
+    "/api/executive-dashboard/quarterly-incident",
+    QuarterlyIncidentRoute
   );
 
   app.use("/api/users", limiter, userRoute);
