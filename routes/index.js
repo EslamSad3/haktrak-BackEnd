@@ -32,6 +32,10 @@ const QuarterlyIncidentRoute = require("./Executive_Dashboard/QuarterlyIncidentR
 const TtdTtrRoute = require("./Executive_Dashboard/TtdTtrRoute");
 const DigitalRiskIntelligenceRoute = require("./Executive_Dashboard/DigitalRiskIntelligenceRoute");
 
+// Attack Secnarios
+const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
+const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
+
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
@@ -103,6 +107,8 @@ const mountRoutes = (app) => {
     "/api/executive-dashboard/digital-risk-intelligence",
     DigitalRiskIntelligenceRoute
   );
+  app.use("/api/attack-scenarios/mitre-attacks", MitreAttacksRoute);
+  app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);

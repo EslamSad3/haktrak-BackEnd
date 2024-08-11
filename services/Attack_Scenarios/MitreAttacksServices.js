@@ -1,5 +1,5 @@
 const MitreAttacks = require("../../models/Attack_Scenarios/MitreAttacks");
-const factory = require("./handlersFactory");
+const factory = require("../handlersFactory");
 
 // @desc      Create MitreAttacks
 // @route     POST /api/attack-scenarios/mitre-attacks

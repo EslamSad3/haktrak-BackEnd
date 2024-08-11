@@ -1,5 +1,5 @@
 const CyberKillChain = require("../../models/Attack_Scenarios/CyberKillChain");
-const factory = require("./handlersFactory");
+const factory = require("../handlersFactory");
 
 // @desc      Create CyberKillChain
 // @route     POST /api/attack-scenarios/cyber-kill-chain
