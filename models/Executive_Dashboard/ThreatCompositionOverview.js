@@ -20,6 +20,8 @@ const ThreatCompositionOverview = new mongoose.Schema(
   { timestamps: true }
 );
 
+ThreatCompositionOverview.index({ month: 1, threatType: 1 }, { unique: true });
+
 module.exports = mongoose.model(
   "ThreatCompositionOverview",
   ThreatCompositionOverview

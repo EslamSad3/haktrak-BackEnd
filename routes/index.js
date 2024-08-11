@@ -29,6 +29,8 @@ const NonComplianceGapsOverviewRoute = require("./Executive_Dashboard/NonComplia
 const ThreatCompositionOverviewRoute = require("./Executive_Dashboard/ThreatCompositionOverviewRoute");
 const SecurityBreachIndicatorsRoute = require("./Executive_Dashboard/SecurityBreachIndicatorsRoute");
 const QuarterlyIncidentRoute = require("./Executive_Dashboard/QuarterlyIncidentRoute");
+const TtdTtrRoute = require("./Executive_Dashboard/TtdTtrRoute");
+const DigitalRiskIntelligenceRoute = require("./Executive_Dashboard/DigitalRiskIntelligenceRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -95,6 +97,11 @@ const mountRoutes = (app) => {
   app.use(
     "/api/executive-dashboard/quarterly-incident",
     QuarterlyIncidentRoute
+  );
+  app.use("/api/executive-dashboard/ttd-ttr", TtdTtrRoute);
+  app.use(
+    "/api/executive-dashboard/digital-risk-intelligence",
+    DigitalRiskIntelligenceRoute
   );
 
   app.use("/api/users", limiter, userRoute);

@@ -22,6 +22,12 @@ const AttackSurfaceSchema = new mongoose.Schema(
       type: String,
       required: [true, "Attack Surface mitigationSteps required"],
     },
+    status: {
+      type: String,
+      enum: ["investigating", "resolved", "unresolved"],
+      default: "unresolved",
+      required: [true, "Attack Surface status required"],
+    },
   },
   { timestamps: true }
 );

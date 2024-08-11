@@ -23,6 +23,12 @@ const LeakedCredentialsSchema = new mongoose.Schema(
       type: Date,
       required: [true, "Leaked Credentials leakDate required"],
     },
+    status: {
+      type: String,
+      enum: ["investigating", "resolved", "unresolved"],
+      default: "unresolved",
+      required: [true, "Leaked Credentials status required"],
+    },
   },
   { timestamps: true }
 );

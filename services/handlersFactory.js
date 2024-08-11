@@ -61,19 +61,28 @@ exports.getAll = (Model, modelname = "") =>
 
 exports.create = (Model) =>
   asyncHandler(async (req, res) => {
-    let urlsOfscreenshot = {};
-    if (req.file) {
-      const { path } = req.file;
-      const newPath = await this.cloudinaryImageUploadMethod(path);
-      urlsOfscreenshot = newPath;
-    }
+    try {
+      let urlsOfscreenshot = {};
+      if (req.file) {
+        const { path } = req.file;
+        const newPath = await this.cloudinaryImageUploadMethod(path);
+        urlsOfscreenshot = newPath;
+      }
 
-    if (urlsOfscreenshot) {
-      req.body.screenshot = urlsOfscreenshot.res;
-    }
+      if (urlsOfscreenshot) {
+        req.body.screenshot = urlsOfscreenshot.res;
+      }
 
-    const collection = await Model.create(req.body);
-    res.status(201).json({ data: collection });
+      const collection = await Model.create(req.body);
+      res.status(201).json({ data: collection });
+    } catch (error) {
+      if (error.code === 11000) {
+        return res.status(400).json({
+          error: "This attribute for this month already exists",
+        });
+      }
+      res.status(500).json({ error: error.message });
+    }
   });
 
 exports.updateOne = (Model) =>

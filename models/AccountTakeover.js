@@ -17,6 +17,12 @@ const AccountTakeoverSchema = new mongoose.Schema(
       type: String,
       required: [true, "Account Take over mitigationSteps required"],
     },
+    status: {
+      type: String,
+      enum: ["investigating", "resolved", "unresolved"],
+      default: "unresolved",
+      required: [true, "Account Take over status required"],
+    },
   },
   { timestamps: true }
 );

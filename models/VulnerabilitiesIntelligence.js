@@ -51,6 +51,8 @@ const VulnerabilitiesIntelligenceSchema = new mongoose.Schema(
     },
     status: {
       type: String,
+      enum: ["investigating", "resolved", "unresolved"],
+      default: "unresolved",
       required: [true, "Vulnerabilities Intelligence status required"],
     },
     references: {

@@ -25,6 +25,8 @@ const SecurityBreachIndicators = new mongoose.Schema(
   { timestamps: true }
 );
 
+SecurityBreachIndicators.index({ month: 1, indicator: 1 }, { unique: true });
+
 module.exports = mongoose.model(
   "SecurityBreachIndicators",
   SecurityBreachIndicators
