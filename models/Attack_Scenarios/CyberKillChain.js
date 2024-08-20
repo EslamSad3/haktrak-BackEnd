@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const CyberKillChainSchema = new mongoose.Schema({
   incidentId: {
     type: String,
-    required: [true, " Cyber Kill ChainIncident ID is required"],
+    required: [true, " Cyber Kill Chain Incident ID is required"],
     unique: true,
   },
   killChainStage: {
