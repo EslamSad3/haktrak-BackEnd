@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const AttackSurfaceSchema = new mongoose.Schema(
   {
+    detectionTime: {
+      type: Date,
+      required: [true, "Attack Surface detectionTime required"],
+    },
     affectedSystems: {
       type: String,
       required: [true, "Attack Surface affectedSystems required"],

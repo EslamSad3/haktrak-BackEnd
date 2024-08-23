@@ -13,5 +13,6 @@ const SecurityPostureScore = new mongoose.Schema(
   },
   { timestamps: true }
 );
+SecurityPostureScore.index({ percentage: 1, score: 1 }, { unique: true });
 
 module.exports = mongoose.model("SecurityPostureScore", SecurityPostureScore);

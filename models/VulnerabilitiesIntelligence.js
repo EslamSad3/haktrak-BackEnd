@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const VulnerabilitiesIntelligenceSchema = new mongoose.Schema(
   {
+    detectionTime: {
+      type: Date,
+      required: [true, "Vulnerabilities Intelligence detectionTime required"],
+    },
     vulnerabilityID: {
       type: String,
       required: [true, "Vulnerabilities Intelligence vulnerabilityID required"],
@@ -56,7 +60,7 @@ const VulnerabilitiesIntelligenceSchema = new mongoose.Schema(
       required: [true, "Vulnerabilities Intelligence status required"],
     },
     references: {
-      type: String,
+      type: [String],
       required: [true, "Vulnerabilities Intelligence references required"],
     },
   },

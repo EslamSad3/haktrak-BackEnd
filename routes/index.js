@@ -77,7 +77,7 @@ const mountRoutes = (app) => {
     vulnerabilitiesIntelligencesRoute
   );
   // EDRXDR Detections
-  app.use("/api/detections/drxdr-detections", EDRXDRDetectionsRoute);
+  app.use("/api/detections/edrxdr-detections", EDRXDRDetectionsRoute);
   // NDR Detections
   app.use("/api/detections/ndr-detections", NDRDetectionsRoute);
 

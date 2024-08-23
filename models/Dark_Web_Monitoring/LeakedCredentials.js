@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const LeakedCredentialsSchema = new mongoose.Schema(
   {
+    detectionTime: {
+      type: Date,
+      required: [true, "Leaked Credential detectionTime required"],
+    },
     user: {
       type: String,
       required: [true, "Leaked Credentials user required"],
