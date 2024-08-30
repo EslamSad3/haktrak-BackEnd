@@ -78,7 +78,7 @@ exports.create = (Model) =>
     } catch (error) {
       if (error.code === 11000) {
         return res.status(400).json({
-          error: "This attribute for this month already exists",
+          message: "This attribute for this month already exists",
         });
       }
       res.status(500).json({ error: error.message });
