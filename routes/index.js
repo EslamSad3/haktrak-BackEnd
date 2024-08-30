@@ -31,6 +31,7 @@ const SecurityBreachIndicatorsRoute = require("./Executive_Dashboard/SecurityBre
 const QuarterlyIncidentRoute = require("./Executive_Dashboard/QuarterlyIncidentRoute");
 const TtdTtrRoute = require("./Executive_Dashboard/TtdTtrRoute");
 const DigitalRiskIntelligenceRoute = require("./Executive_Dashboard/DigitalRiskIntelligenceRoute");
+const CyberSecurityTrendsRoute = require("./Executive_Dashboard/CyberSecurityTrendsRoute");
 
 // Attack Secnarios
 const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
@@ -106,6 +107,10 @@ const mountRoutes = (app) => {
   app.use(
     "/api/executive-dashboard/digital-risk-intelligence",
     DigitalRiskIntelligenceRoute
+  );
+  app.use(
+    "/api/executive-dashboard/cyber-security-trends",
+    CyberSecurityTrendsRoute
   );
   app.use("/api/attack-scenarios/mitre-attacks", MitreAttacksRoute);
   app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);

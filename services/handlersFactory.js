@@ -75,10 +75,11 @@ exports.create = (Model) =>
 
       const collection = await Model.create(req.body);
       res.status(201).json({ data: collection });
+      console.log(collection);
     } catch (error) {
       if (error.code === 11000) {
         return res.status(400).json({
-          message: "This attribute for this month already exists",
+          message: "This attribute already exists",
         });
       }
       res.status(500).json({ error: error.message });
