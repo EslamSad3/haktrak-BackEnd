@@ -18,6 +18,10 @@ const DigitalRiskIntelligence = new mongoose.Schema(
       ],
       required: [true, "Digital Risk Intelligence indicator required"],
     },
+    summary: {
+      type: String,
+      required: [true, "Digital Risk Intelligence summary required"],
+    },
   },
   { timestamps: true }
 );
