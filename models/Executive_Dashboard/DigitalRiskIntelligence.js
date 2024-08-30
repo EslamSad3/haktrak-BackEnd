@@ -26,7 +26,7 @@ const DigitalRiskIntelligence = new mongoose.Schema(
   { timestamps: true }
 );
 
-DigitalRiskIntelligence.index({ indicator: 1 }, { unique: true });
+DigitalRiskIntelligence.index({ indicator: 1, level: 1 }, { unique: true });
 
 module.exports = mongoose.model(
   "DigitalRiskIntelligence",
