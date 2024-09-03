@@ -10,6 +10,8 @@ const aptFeedsRoute = require("./Threat_Intelligence/aptFeedsRoute");
 const iocsRoute = require("./Threat_Intelligence/iocsRoute");
 const suspiciousIPsRoute = require("./Threat_Intelligence/suspiciousIPsRoute");
 const threatIntelligenceFeedsRoute = require("./Threat_Intelligence/threatIntelligenceFeedsRoute");
+const geoWatchRoute = require("./Threat_Intelligence/geoWatchRoute");
+const threatNewsRoute = require("./Threat_Intelligence/threatNewsRoute");
 // Account Take Over
 const accountTakeoverRoute = require("./accountTakeoverRoute");
 // Attck Surface
@@ -36,6 +38,7 @@ const CyberSecurityTrendsRoute = require("./Executive_Dashboard/CyberSecurityTre
 // Attack Secnarios
 const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
 const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
+const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRoutes");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -64,6 +67,8 @@ const mountRoutes = (app) => {
     "/api/threat-intelligence/threat-intelligence-feeds",
     threatIntelligenceFeedsRoute
   );
+  app.use("/api/threat-intelligence/threat-news", threatNewsRoute);
+  app.use("/api/threat-intelligence/geo-watch", geoWatchRoute);
   // Attack SurfaceRoute
   app.use("/api/attack-surface", attackSurfaceRoute);
 
@@ -114,6 +119,8 @@ const mountRoutes = (app) => {
   );
   app.use("/api/attack-scenarios/mitre-attacks", MitreAttacksRoute);
   app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
+
+  app.use("/api/executive-dashboard/third-party-threat", ThirdPartyThreatRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
