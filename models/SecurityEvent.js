@@ -6,7 +6,7 @@ const SecurityEventSchema = new mongoose.Schema({
   securityEvent: { type: String },
   incident: { type: String },
   atoDarkWebASM: { type: String },
-  month: { type: Date },
+  month: { type: String },
 });
 
 module.exports = mongoose.model("SecurityEvent", SecurityEventSchema);
