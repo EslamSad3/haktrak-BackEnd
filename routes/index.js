@@ -45,6 +45,8 @@ const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRou
 const SecurityEventRoute = require("./SecurityEventRoutes");
 const MonthlyVolumeRoute = require("./MonthlyVolumeRoutes");
 const CyberRatingRoute = require("./CyberRatingRoutes");
+const AttackTrendRoute = require("./AttackTrendRoutes");
+const CyberAttackTrendsRoute = require("./CyberAttackTrendsRoutes");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -133,6 +135,8 @@ const mountRoutes = (app) => {
   app.use("/api/security-event", SecurityEventRoute);
   app.use("/api/monthly-volume", MonthlyVolumeRoute);
   app.use("/api/cyber-rating", CyberRatingRoute);
+  app.use("/api/attack-trend", AttackTrendRoute);
+  app.use("/api/cyber-attack-trends", CyberAttackTrendsRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
