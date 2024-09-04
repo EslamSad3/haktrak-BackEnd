@@ -13,7 +13,9 @@ const threatIntelligenceFeedsRoute = require("./Threat_Intelligence/threatIntell
 const geoWatchRoute = require("./Threat_Intelligence/geoWatchRoute");
 const threatNewsRoute = require("./Threat_Intelligence/threatNewsRoute");
 // Account Take Over
-const accountTakeoverRoute = require("./accountTakeoverRoute");
+const accountTakeoverRoute = require("./Account_Take_Over/accountTakeoverRoute");
+const impersonationRoute = require("./Account_Take_Over/impersonationRoute");
+const executiveVipProtectionRoute = require("./Account_Take_Over/executiveVipProtectionRoute");
 // Attck Surface
 const attackSurfaceRoute = require("./attackSurfaceRoute");
 // Brand Reputation
@@ -73,7 +75,9 @@ const mountRoutes = (app) => {
   app.use("/api/attack-surface", attackSurfaceRoute);
 
   // Account Take Over
-  app.use("/api/account-take-over", accountTakeoverRoute);
+  app.use("/api/atos/account-take-over", accountTakeoverRoute);
+  app.use("/api/atos/impersonations", impersonationRoute);
+  app.use("/api/atos/executive-vip-protection", executiveVipProtectionRoute);
 
   // Brand Reputation
   app.use("/api/brand-reputation", brandReputationRoute);
