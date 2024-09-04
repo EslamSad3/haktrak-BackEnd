@@ -43,6 +43,9 @@ const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
 const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRoutes");
 
 const SecurityEventRoute = require("./SecurityEventRoutes");
+const MonthlyVolumeRoute = require("./MonthlyVolumeRoutes");
+const CyberRatingRoute = require("./CyberRatingRoutes");
+
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
 const { limiter } = require("../middlewares/rateLimiterMiddleware");
@@ -126,7 +129,10 @@ const mountRoutes = (app) => {
   app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
 
   app.use("/api/executive-dashboard/third-party-threat", ThirdPartyThreatRoute);
+
   app.use("/api/security-event", SecurityEventRoute);
+  app.use("/api/monthly-volume", MonthlyVolumeRoute);
+  app.use("/api/cyber-rating", CyberRatingRoute);
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);
