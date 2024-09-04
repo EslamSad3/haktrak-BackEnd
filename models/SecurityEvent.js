@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const SecurityEventSchema = new mongoose.Schema({
-  bu: { type: String },
+  name: { type: String },
   alertVolume: { type: String },
   securityEvent: { type: String },
   incident: { type: String },
