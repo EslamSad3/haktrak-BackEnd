@@ -7,4 +7,6 @@ const AttackTrendSchema = new mongoose.Schema({
   month: { type: String, required: true }, // Add month field
 });
 
+AttackTrendSchema.index({ tactic: 1, month: 1 }, { unique: true });
+
 module.exports = mongoose.model("AttackTrend", AttackTrendSchema);
