@@ -41,6 +41,7 @@ const CyberSecurityTrendsRoute = require("./Executive_Dashboard/CyberSecurityTre
 const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
 const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
 const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRoutes");
+const SupplyChainThreatExposureRoute = require("./Executive_Dashboard/SupplyChainThreatExposureRoutes");
 
 const SecurityEventRoute = require("./SecurityEventRoutes");
 const MonthlyVolumeRoute = require("./MonthlyVolumeRoutes");
@@ -131,6 +132,10 @@ const mountRoutes = (app) => {
   app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
 
   app.use("/api/executive-dashboard/third-party-threat", ThirdPartyThreatRoute);
+  app.use(
+    "/api/executive-dashboard/supply-chain-threat-exposure",
+    SupplyChainThreatExposureRoute
+  );
 
   app.use("/api/security-event", SecurityEventRoute);
   app.use("/api/monthly-volume", MonthlyVolumeRoute);
