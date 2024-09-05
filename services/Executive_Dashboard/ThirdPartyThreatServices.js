@@ -1,4 +1,4 @@
-const ThirdPartyThreat = require("../../models/Executive_Dashboard/ThirdPartyThreat");
+const ThirdPartyThreat = require("../../models/Reports/ThirdPartyThreat");
 const factory = require("../handlersFactory");
 
 // @desc      Create Non Compliance Gaps Overview

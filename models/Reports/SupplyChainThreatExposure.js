@@ -15,6 +15,7 @@ const SupplyChainThreatExposure = new mongoose.Schema(
       type: String,
       required: [true, "Supply Chain Threat Exposure month required"],
     },
+    year: { type: String }, // Add year field
   },
   { timestamps: true }
 );

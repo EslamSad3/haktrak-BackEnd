@@ -12,6 +12,7 @@ const QuarterlyIncident = new mongoose.Schema(
       type: String,
       required: [true, "Quarterly Incident Score required"],
     },
+    year: { type: String }, // Add year field
   },
   { timestamps: true }
 );

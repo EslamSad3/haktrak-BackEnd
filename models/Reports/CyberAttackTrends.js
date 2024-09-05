@@ -13,6 +13,7 @@ const CyberAttackTrendsSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  year: { type: String }, // Add year field
 });
 
 module.exports = mongoose.model("CyberAttackTrends", CyberAttackTrendsSchema);

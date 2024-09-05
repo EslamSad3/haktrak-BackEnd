@@ -1,4 +1,4 @@
-const MonthlyVolume = require("../models/MonthlyVolume");
+const MonthlyVolume = require("../models/Reports/MonthlyVolume");
 const factory = require("./handlersFactory");
 
 // @desc      Create MonthlyVolume

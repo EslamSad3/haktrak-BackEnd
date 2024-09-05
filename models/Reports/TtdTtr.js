@@ -7,6 +7,7 @@ const TtdTtr = new mongoose.Schema(
       required: [true, "TtdTtr month required"],
       trim: true,
     },
+    year: { type: String }, // Add year field
     score: {
       type: String,
       required: [true, "TtdTtr Score required"],

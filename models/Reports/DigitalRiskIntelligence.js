@@ -18,6 +18,8 @@ const DigitalRiskIntelligence = new mongoose.Schema(
       ],
       required: [true, "Digital Risk Intelligence indicator required"],
     },
+    year: { type: String }, // Add year field
+    month: { type: String }, // Add month field
   },
   { timestamps: true }
 );

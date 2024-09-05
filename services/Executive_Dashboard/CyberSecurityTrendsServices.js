@@ -1,4 +1,4 @@
-const CyberSecurityTrends = require("../../models/Executive_Dashboard/CyberSecurityTrends");
+const CyberSecurityTrends = require("../../models/Reports/CyberSecurityTrends");
 const factory = require("../handlersFactory");
 
 // @desc      Create Non Compliance Gaps Overview

@@ -10,6 +10,7 @@ const CyberResilienceTime = new mongoose.Schema(
       type: String,
       required: [true, "Cyber Resilience Time month required"],
     },
+    year: { type: String }, // Add year field
   },
   { timestamps: true }
 );

@@ -15,6 +15,7 @@ const NonComplianceGapsOverviewSchema = new mongoose.Schema(
       type: String,
       required: [true, "Non Compliance Gaps Overview Score required"],
     },
+    year: { type: String }, // Add year field
   },
   { timestamps: true }
 );

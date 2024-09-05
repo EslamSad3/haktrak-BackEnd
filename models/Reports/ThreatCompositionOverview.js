@@ -7,6 +7,8 @@ const ThreatCompositionOverview = new mongoose.Schema(
       required: [true, "Threat Composition Overview month required"],
       trim: true,
     },
+    year: { type: String }, // Add year field
+
     score: {
       type: String,
       required: [true, "Threat Composition Overview Score required"],

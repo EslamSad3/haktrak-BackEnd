@@ -11,6 +11,8 @@ const ThirdPartyThreat = new mongoose.Schema(
       enum: ["low", "medium", "high", "critical"],
       required: [true, "Third Party Threat severity required"],
     },
+    year: { type: String }, // Add year field
+    month: { type: String }, // Add month field
   },
   { timestamps: true }
 );

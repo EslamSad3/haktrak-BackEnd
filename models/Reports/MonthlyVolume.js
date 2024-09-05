@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 
 const MonthlyVolumeSchema = new mongoose.Schema({
   month: { type: String },
+  year: { type: String }, // Add year field
+
   securityEvents: { type: String },
   alertVolume: { type: String },
   incidents: { type: String },

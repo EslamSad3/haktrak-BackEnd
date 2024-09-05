@@ -1,4 +1,4 @@
-const SupplyChainThreatExposure = require("../../models/Executive_Dashboard/SupplyChainThreatExposure");
+const SupplyChainThreatExposure = require("../../models/Reports/SupplyChainThreatExposure");
 const factory = require("../handlersFactory");
 
 // @desc      Create Non Compliance Gaps Overview

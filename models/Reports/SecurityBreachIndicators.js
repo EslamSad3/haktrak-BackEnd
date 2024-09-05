@@ -7,6 +7,8 @@ const SecurityBreachIndicators = new mongoose.Schema(
       required: [true, "Security Breach Indicators month required"],
       trim: true,
     },
+    year: { type: String }, // Add year field
+
     score: {
       type: String,
       required: [true, "Security Breach Indicators Score required"],

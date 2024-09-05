@@ -7,6 +7,7 @@ const SecurityEventSchema = new mongoose.Schema({
   incident: { type: String },
   atoDarkWebASM: { type: String },
   month: { type: String },
+  year: { type: String }, // Add year field
 });
 
 SecurityEventSchema.index(
