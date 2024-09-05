@@ -1,28 +1,28 @@
-const QuarterlyIncident = require("../../models/Reports/QuarterlyIncident");
+const Quarterlyincident = require("../../models/Executive_Dashboard/Quarterlyincident");
 const factory = require("../handlersFactory");
 
-// @desc      Create Security Posture Score
+// @desc      Create Quarterly incident
 // @route     POST /api/executive-dashboard/quarterly-incident
 // @access    private
-exports.createQuarterlyIncident = factory.create(QuarterlyIncident);
+exports.createQuarterlyincident = factory.create(Quarterlyincident);
 
-// @desc      Get Specific Security Posture Score by id
+// @desc      Get Specific Quarterly incident by id
 // @route     GET /api/executive-dashboard/quarterly-incident/:id
 // @access    Public
-exports.getQuarterlyIncident = factory.getOne(QuarterlyIncident);
+exports.getQuarterlyincident = factory.getOne(Quarterlyincident);
 
-// @desc      Get List Of Security Posture Score
+// @desc      Get List Of Quarterly incident
 // @route     GET /api/executive-dashboard/quarterly-incident
 // @access    Public
-exports.getQuarterlyIncidents = factory.getAll(QuarterlyIncident);
+exports.getQuarterlyincidents = factory.getAll(Quarterlyincident);
 
-// @desc      Update Security Posture Score
+// @desc      Update Quarterly incident
 // @route     PATCH /api/executive-dashboard/quarterly-incident/:id
 // @access    private
-exports.updateQuarterlyIncident = factory.updateOne(QuarterlyIncident);
+exports.updateQuarterlyincident = factory.updateOne(Quarterlyincident);
 
-// @desc      Delete Security Posture Score
+// @desc      Delete Quarterly incident
 // @route     DELETE /api/executive-dashboard/quarterly-incident/:id
 // @access    private
 
-exports.deleteQuarterlyIncident = factory.deleteOne(QuarterlyIncident);
+exports.deleteQuarterlyincident = factory.deleteOne(Quarterlyincident);
