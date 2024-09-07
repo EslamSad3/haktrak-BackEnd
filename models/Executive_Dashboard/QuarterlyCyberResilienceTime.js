@@ -11,6 +11,7 @@ const QuarterlyCyberResilienceTime = new mongoose.Schema(
       required: [true, "Cyber Resilience Time month required"],
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );

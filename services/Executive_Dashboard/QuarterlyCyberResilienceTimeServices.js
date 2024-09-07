@@ -1,4 +1,4 @@
-const QuarterlyCyberResilienceTimeServices = require("../../models/Executive_Dashboard/CyberResilienceTimeQuarterly");
+const QuarterlyCyberResilienceTimeServices = require("../../models/Executive_Dashboard/QuarterlyCyberResilienceTime");
 const factory = require("../handlersFactory");
 
 // @desc      Create Cyber Resilience Time

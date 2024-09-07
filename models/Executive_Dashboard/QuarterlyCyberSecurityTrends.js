@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CyberSecurityTrendsQuarterly = new mongoose.Schema(
+const QuarterlyCyberSecurityTrends = new mongoose.Schema(
   {
     score: {
       type: String,
@@ -21,12 +21,12 @@ const CyberSecurityTrendsQuarterly = new mongoose.Schema(
   { timestamps: true }
 );
 
-CyberSecurityTrendsQuarterly.index(
+QuarterlyCyberSecurityTrends.index(
   { indicator: 1, score: 1 },
   { unique: true }
 );
 
 module.exports = mongoose.model(
-  "CyberSecurityTrendsQuarterly",
-  CyberSecurityTrendsQuarterly
+  "QuarterlyCyberSecurityTrends",
+  QuarterlyCyberSecurityTrends
 );

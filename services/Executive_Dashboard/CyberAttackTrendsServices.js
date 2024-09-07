@@ -1,4 +1,4 @@
-const CyberAttackTrends = require("../../models/Executive_Dashboard/CyberAttackTrends");
+const CyberAttackTrends = require("../../models/Executive_Dashboard/QuarterlyCyberAttackTrends");
 const factory = require("../handlersFactory");
 
 // @desc      Create Cyber Resilience Time

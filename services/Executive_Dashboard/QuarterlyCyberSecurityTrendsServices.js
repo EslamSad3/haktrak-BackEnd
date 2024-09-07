@@ -1,4 +1,4 @@
-const QuarterlyCyberSecurityTrends = require("../../models/Executive_Dashboard/CyberSecurityTrendsQuarterly");
+const QuarterlyCyberSecurityTrends = require("../../models/Executive_Dashboard/QuarterlyCyberSecurityTrends");
 const factory = require("../handlersFactory");
 
 // @desc      Create Quarterly Cyber Security Trends

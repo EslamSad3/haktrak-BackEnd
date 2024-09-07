@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CyberAttackTrendsSchema = new mongoose.Schema({
+const QuarterlyCyberAttackTrendsSchema = new mongoose.Schema({
   month: {
     type: String,
     required: true,
@@ -16,4 +16,7 @@ const CyberAttackTrendsSchema = new mongoose.Schema({
   year: { type: String }, // Add year field
 });
 
-module.exports = mongoose.model("CyberAttackTrends", CyberAttackTrendsSchema);
+module.exports = mongoose.model(
+  "QuarterlyCyberAttackTrends",
+  QuarterlyCyberAttackTrendsSchema
+);
