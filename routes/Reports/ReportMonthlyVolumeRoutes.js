@@ -1,20 +1,23 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createMonthlyVolume,
-  getMonthlyVolume,
-  getMonthlyVolumes,
-  updateMonthlyVolume,
-  deleteMonthlyVolume,
-} = require("../../services/Reports/MonthlyVolumeServices");
+  createReportMonthlyVolume,
+  getReportMonthlyVolume,
+  getReportMonthlyVolumes,
+  updateReportMonthlyVolume,
+  deleteReportMonthlyVolume,
+} = require("../../services/Reports/ReportMonthlyVolumeServices");
 
 const router = express.Router();
 
-router.route("/").get(getMonthlyVolumes);
-router.route("/:id").get(getMonthlyVolume);
+router.route("/").get(getReportMonthlyVolumes);
+router.route("/:id").get(getReportMonthlyVolume);
 
 router.use(auth.protect, auth.allowedTo("admin"));
 
-router.route("/").post(createMonthlyVolume);
-router.route("/:id").patch(updateMonthlyVolume).delete(deleteMonthlyVolume);
+router.route("/").post(createReportMonthlyVolume);
+router
+  .route("/:id")
+  .patch(updateReportMonthlyVolume)
+  .delete(deleteReportMonthlyVolume);
 module.exports = router;

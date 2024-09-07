@@ -1,4 +1,4 @@
-const ReportCyberResilienceTime = require("../../models/Reports/QuarterlyReportCyberResilienceTime");
+const ReportCyberResilienceTime = require("../../models/Reports/ReportCyberResilienceTime");
 const factory = require("../handlersFactory");
 
 // @desc      Create Cyber Resilience Time

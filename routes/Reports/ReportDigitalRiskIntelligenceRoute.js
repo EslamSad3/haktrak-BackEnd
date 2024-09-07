@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createDigitalRiskIntelligence,
-  getDigitalRiskIntelligences,
-  getDigitalRiskIntelligence,
-  updateDigitalRiskIntelligence,
-  deleteDigitalRiskIntelligence,
-} = require("../../services/Reports/DigitalRiskIntelligenceServices");
+  createReportDigitalRiskIntelligence,
+  getReportDigitalRiskIntelligences,
+  getReportDigitalRiskIntelligence,
+  updateReportDigitalRiskIntelligence,
+  deleteReportDigitalRiskIntelligence,
+} = require("../../services/Reports/ReportDigitalRiskIntelligenceServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getDigitalRiskIntelligences);
+router.route("/").get(getReportDigitalRiskIntelligences);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getDigitalRiskIntelligence);
-router.route("/").post(createDigitalRiskIntelligence);
+router.route("/:id").get(getReportDigitalRiskIntelligence);
+router.route("/").post(createReportDigitalRiskIntelligence);
 router
   .route("/:id")
-  .patch(updateDigitalRiskIntelligence)
-  .delete(deleteDigitalRiskIntelligence);
+  .patch(updateReportDigitalRiskIntelligence)
+  .delete(deleteReportDigitalRiskIntelligence);
 module.exports = router;

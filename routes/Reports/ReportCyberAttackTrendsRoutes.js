@@ -1,23 +1,23 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createCyberAttackTrends,
-  getCyberAttackTrend,
-  getCyberAttackTrends,
-  updateCyberAttackTrends,
-  deleteCyberAttackTrends,
-} = require("../../services/Reports/CyberAttackTrendsServices");
+  createReportCyberAttackTrends,
+  getReportCyberAttackTrend,
+  getReportCyberAttackTrends,
+  updateReportCyberAttackTrends,
+  deleteReportCyberAttackTrends,
+} = require("../../services/Reports/ReportCyberAttackTrendsServices");
 
 const router = express.Router();
 
-router.route("/").get(getCyberAttackTrends);
-router.route("/:id").get(getCyberAttackTrend);
+router.route("/").get(getReportCyberAttackTrends);
+router.route("/:id").get(getReportCyberAttackTrend);
 
 router.use(auth.protect, auth.allowedTo("admin"));
 
-router.route("/").post(createCyberAttackTrends);
+router.route("/").post(createReportCyberAttackTrends);
 router
   .route("/:id")
-  .patch(updateCyberAttackTrends)
-  .delete(deleteCyberAttackTrends);
+  .patch(updateReportCyberAttackTrends)
+  .delete(deleteReportCyberAttackTrends);
 module.exports = router;

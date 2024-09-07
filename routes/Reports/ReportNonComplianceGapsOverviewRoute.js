@@ -1,24 +1,24 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createNonComplianceGapsOverview,
-  getNonComplianceGapsOverviews,
-  getNonComplianceGapsOverview,
-  updateNonComplianceGapsOverview,
-  deleteNonComplianceGapsOverview,
-} = require("../../services/Reports/NonComplianceGapsOverviewServices");
+  createReportNonComplianceGapsOverview,
+  getReportNonComplianceGapsOverviews,
+  getReportNonComplianceGapsOverview,
+  updateReportNonComplianceGapsOverview,
+  deleteReportNonComplianceGapsOverview,
+} = require("../../services/Reports/ReportNonComplianceGapsOverviewServices");
 
 const router = express.Router();
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getNonComplianceGapsOverviews);
+router.route("/").get(getReportNonComplianceGapsOverviews);
 
 router.use(auth.allowedTo("admin"));
-router.route("/:id").get(getNonComplianceGapsOverview);
-router.route("/").post(createNonComplianceGapsOverview);
+router.route("/:id").get(getReportNonComplianceGapsOverview);
+router.route("/").post(createReportNonComplianceGapsOverview);
 router
   .route("/:id")
-  .patch(updateNonComplianceGapsOverview)
-  .delete(deleteNonComplianceGapsOverview);
+  .patch(updateReportNonComplianceGapsOverview)
+  .delete(deleteReportNonComplianceGapsOverview);
 module.exports = router;

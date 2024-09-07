@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createCyberSecurityTrends,
-  getCyberSecurityTrendss,
-  getCyberSecurityTrends,
-  updateCyberSecurityTrends,
-  deleteCyberSecurityTrends,
-} = require("../../services/Reports/CyberSecurityTrendsServices");
+  createReportCyberSecurityTrends,
+  getReportCyberSecurityTrends,
+  getReportCyberSecurityTrend,
+  updateReportCyberSecurityTrends,
+  deleteReportCyberSecurityTrends,
+} = require("../../services/Reports/ReportCyberSecurityTrendsServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getCyberSecurityTrendss);
+router.route("/").get(getReportCyberSecurityTrends);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getCyberSecurityTrends);
-router.route("/").post(createCyberSecurityTrends);
+router.route("/:id").get(getReportCyberSecurityTrend);
+router.route("/").post(createReportCyberSecurityTrends);
 router
   .route("/:id")
-  .patch(updateCyberSecurityTrends)
-  .delete(deleteCyberSecurityTrends);
+  .patch(updateReportCyberSecurityTrends)
+  .delete(deleteReportCyberSecurityTrends);
 module.exports = router;

@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createThirdPartyThreat,
-  getThirdPartyThreat,
-  getThirdPartyThreats,
-  updateThirdPartyThreat,
-  deleteThirdPartyThreat,
-} = require("../../services/Reports/ThirdPartyThreatServices");
+  createReportThirdPartyThreat,
+  getReportThirdPartyThreat,
+  getReportThirdPartyThreats,
+  updateReportThirdPartyThreat,
+  deleteReportThirdPartyThreat,
+} = require("../../services/Reports/ReportThirdPartyThreatServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getThirdPartyThreats);
+router.route("/").get(getReportThirdPartyThreats);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getThirdPartyThreat);
-router.route("/").post(createThirdPartyThreat);
+router.route("/:id").get(getReportThirdPartyThreat);
+router.route("/").post(createReportThirdPartyThreat);
 router
   .route("/:id")
-  .patch(updateThirdPartyThreat)
-  .delete(deleteThirdPartyThreat);
+  .patch(updateReportThirdPartyThreat)
+  .delete(deleteReportThirdPartyThreat);
 module.exports = router;

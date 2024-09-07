@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createThreatCompositionOverview,
-  getThreatCompositionOverviews,
-  getThreatCompositionOverview,
-  updateThreatCompositionOverview,
-  deleteThreatCompositionOverview,
-} = require("../../services/Reports/ThreatCompositionOverviewServices");
+  createReportThreatCompositionOverview,
+  getReportThreatCompositionOverviews,
+  getReportThreatCompositionOverview,
+  updateReportThreatCompositionOverview,
+  deleteReportThreatCompositionOverview,
+} = require("../../services/Reports/ReportThreatCompositionOverviewServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getThreatCompositionOverviews);
+router.route("/").get(getReportThreatCompositionOverviews);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getThreatCompositionOverview);
-router.route("/").post(createThreatCompositionOverview);
+router.route("/:id").get(getReportThreatCompositionOverview);
+router.route("/").post(createReportThreatCompositionOverview);
 router
   .route("/:id")
-  .patch(updateThreatCompositionOverview)
-  .delete(deleteThreatCompositionOverview);
+  .patch(updateReportThreatCompositionOverview)
+  .delete(deleteReportThreatCompositionOverview);
 module.exports = router;

@@ -1,5 +1,5 @@
-const ReportSecurityEvent = require("../models/Reports/ReportSecurityEvent");
-const factory = require("./handlersFactory");
+const ReportSecurityEvent = require("../../models/Reports/ReportSecurityEvent");
+const factory = require("../handlersFactory");
 
 // @desc      Create ReportSecurityEvent
 // @route     POST /api/reports/security-event

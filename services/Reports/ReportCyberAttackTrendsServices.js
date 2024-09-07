@@ -9,7 +9,7 @@ exports.createReportCyberAttackTrends = factory.create(ReportCyberAttackTrends);
 // @desc      Get Specific ReportCyberAttackTrends by id
 // @route     GET /api/reports/cyber-attack-trends/:id
 // @access    Public
-exports.getCyberAttackTrend = factory.getOne(ReportCyberAttackTrends);
+exports.getReportCyberAttackTrend = factory.getOne(ReportCyberAttackTrends);
 
 // @desc      Get List Of ReportCyberAttackTrends
 // @route     GET /api/reports/cyber-attack-trends

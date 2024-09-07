@@ -11,14 +11,12 @@ exports.createReportCyberSecurityTrends = factory.create(
 // @desc      Get Specific Non Compliance Gaps Overview by id
 // @route     GET /api/reports/executive-dashboard/cyber-security-trends/:id
 // @access    Public
-exports.getReportCyberSecurityTrends = factory.getOne(
-  ReportCyberSecurityTrends
-);
+exports.getReportCyberSecurityTrend = factory.getOne(ReportCyberSecurityTrends);
 
 // @desc      Get List Of Non Compliance Gaps Overview
 // @route     GET /api/reports/executive-dashboard/cyber-security-trends
 // @access    Public
-exports.getReportCyberSecurityTrendss = factory.getAll(
+exports.getReportCyberSecurityTrends = factory.getAll(
   ReportCyberSecurityTrends
 );
 

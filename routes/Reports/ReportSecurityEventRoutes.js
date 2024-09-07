@@ -1,20 +1,23 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createSecurityEvent,
-  getSecurityEvent,
-  getSecurityEvents,
-  updateSecurityEvent,
-  deleteSecurityEvent,
-} = require("../../services/Reports/SecurityEventServices");
+  createReportSecurityEvent,
+  getReportSecurityEvent,
+  getReportSecurityEvents,
+  updateReportSecurityEvent,
+  deleteReportSecurityEvent,
+} = require("../../services/Reports/ReportSecurityEventServices");
 
 const router = express.Router();
 
-router.route("/").get(getSecurityEvents);
-router.route("/:id").get(getSecurityEvent);
+router.route("/").get(getReportSecurityEvents);
+router.route("/:id").get(getReportSecurityEvent);
 
 router.use(auth.protect, auth.allowedTo("admin"));
 
-router.route("/").post(createSecurityEvent);
-router.route("/:id").patch(updateSecurityEvent).delete(deleteSecurityEvent);
+router.route("/").post(createReportSecurityEvent);
+router
+  .route("/:id")
+  .patch(updateReportSecurityEvent)
+  .delete(deleteReportSecurityEvent);
 module.exports = router;

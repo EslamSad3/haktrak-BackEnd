@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createSecurityBreachIndicators,
-  getSecurityBreachIndicatorss,
-  getSecurityBreachIndicators,
-  updateSecurityBreachIndicators,
-  deleteSecurityBreachIndicators,
-} = require("../../services/Reports/SecurityBreachIndicatorsServices");
+  createReportSecurityBreachIndicators,
+  getReportSecurityBreachIndicators,
+  getReportSecurityBreachIndicator,
+  updateReportSecurityBreachIndicators,
+  deleteReportSecurityBreachIndicators,
+} = require("../../services/Reports/ReportSecurityBreachIndicatorsServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getSecurityBreachIndicatorss);
+router.route("/").get(getReportSecurityBreachIndicators);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getSecurityBreachIndicators);
-router.route("/").post(createSecurityBreachIndicators);
+router.route("/:id").get(getReportSecurityBreachIndicator);
+router.route("/").post(createReportSecurityBreachIndicators);
 router
   .route("/:id")
-  .patch(updateSecurityBreachIndicators)
-  .delete(deleteSecurityBreachIndicators);
+  .patch(updateReportSecurityBreachIndicators)
+  .delete(deleteReportSecurityBreachIndicators);
 module.exports = router;

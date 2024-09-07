@@ -1,12 +1,12 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createSecurityPostureScore,
-  getSecurityPostureScores,
-  getSecurityPostureScore,
-  updateSecurityPostureScore,
-  deleteSecurityPostureScore,
-} = require("../../services/Reports/SecurityPostureScoreServices");
+  createReportSecurityPostureScore,
+  getReportSecurityPostureScores,
+  getReportSecurityPostureScore,
+  updateReportSecurityPostureScore,
+  deleteReportSecurityPostureScore,
+} = require("../../services/Reports/ReportSecurityPostureScoreServices");
 
 const router = express.Router();
 
@@ -14,14 +14,14 @@ router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
 
-router.route("/").get(getSecurityPostureScores);
+router.route("/").get(getReportSecurityPostureScores);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getSecurityPostureScore);
+router.route("/:id").get(getReportSecurityPostureScore);
 
-router.route("/").post(createSecurityPostureScore);
+router.route("/").post(createReportSecurityPostureScore);
 router
   .route("/:id")
-  .patch(updateSecurityPostureScore)
-  .delete(deleteSecurityPostureScore);
+  .patch(updateReportSecurityPostureScore)
+  .delete(deleteReportSecurityPostureScore);
 module.exports = router;

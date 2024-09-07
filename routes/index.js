@@ -46,6 +46,25 @@ const QuarterlyThirdPartyThreatRoute = require("./Executive_Dashboard/QuarterlyT
 const QuarterlySupplyChainThreatExposureRoute = require("./Executive_Dashboard/QuarterlySupplyChainThreatExposureRoutes");
 /*************************** Executive Dashboard *************** */
 
+/*************************** Report *************** */
+const ReportSecurityPostureScoreRoute = require("./Reports/ReportSecurityPostureScoreRoute");
+const ReportNonComplianceGapsOverviewRoute = require("./Reports/ReportNonComplianceGapsOverviewRoute");
+const ReportThreatCompositionOverviewRoute = require("./Reports/ReportThreatCompositionOverviewRoute");
+const ReportSecurityBreachIndicatorsRoute = require("./Reports/ReportSecurityBreachIndicatorsRoute");
+const ReportIncidentRoute = require("./Reports/ReportMonthlyincidentRoute");
+const ReportTtdTtrRoute = require("./Reports/ReportTtdTtrRoute");
+const ReportDigitalRiskIntelligenceRoute = require("./Reports/ReportDigitalRiskIntelligenceRoute");
+const ReportCyberSecurityTrendsRoute = require("./Reports/ReportCyberSecurityTrendsRoute");
+const ReportSecurityEventRoute = require("./Reports/ReportSecurityEventRoutes");
+const ReportMonthlyVolumeRoutes = require("./Reports/ReportMonthlyVolumeRoutes");
+const ReportCyberRatingRoute = require("./Reports/ReportCyberRatingRoutes");
+const ReportAttackTrendRoute = require("./Reports/ReportAttackTrendRoutes");
+const ReportCyberAttackTrendsRoute = require("./Reports/ReportCyberAttackTrendsRoutes");
+const ReportCyberResilienceTimeRoute = require("./Reports/ReportCyberResilienceTimeRoutes");
+const ReportThirdPartyThreatRoute = require("./Reports/ReportThirdPartyThreatRoutes");
+const ReportSupplyChainThreatExposureRoute = require("./Reports/ReportSupplyChainThreatExposureRoutes");
+/*************************** Report *************** */
+
 // Attack Secnarios
 const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
 const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
@@ -155,6 +174,43 @@ const mountRoutes = (app) => {
     QuarterlyCyberAttackTrendsRoute
   );
   /*************************** Executive Dashboard *************** */
+
+  /*************************** Reports *************** */
+  app.use(
+    "/api/reports/security-posture-score",
+    ReportSecurityPostureScoreRoute
+  );
+  app.use(
+    "/api/reports/non-compliance-gaps-overview",
+    ReportNonComplianceGapsOverviewRoute
+  );
+  app.use(
+    "/api/reports/threat-composition-overview",
+    ReportThreatCompositionOverviewRoute
+  );
+  app.use(
+    "/api/reports/security-breach-indicators",
+    ReportSecurityBreachIndicatorsRoute
+  );
+  app.use("/api/reports/Report-incident", ReportIncidentRoute);
+  app.use("/api/reports/ttd-ttr", ReportTtdTtrRoute);
+  app.use(
+    "/api/reports/digital-risk-intelligence",
+    ReportDigitalRiskIntelligenceRoute
+  );
+  app.use("/api/reports/cyber-security-trends", ReportCyberSecurityTrendsRoute);
+  app.use("/api/reports/third-party-threat", ReportThirdPartyThreatRoute);
+  app.use(
+    "/api/reports/supply-chain-threat-exposure",
+    ReportSupplyChainThreatExposureRoute
+  );
+  app.use("/api/reports/cyber-resilience-time", ReportCyberResilienceTimeRoute);
+  app.use("/api/reports/security-event", ReportSecurityEventRoute);
+  app.use("/api/reports/monthly-volume", ReportMonthlyVolumeRoutes);
+  app.use("/api/reports/cyber-rating", ReportCyberRatingRoute);
+  app.use("/api/reports/attack-trend", ReportAttackTrendRoute);
+  app.use("/api/reports/cyber-attack-trends", ReportCyberAttackTrendsRoute);
+  /*************************** Reports *************** */
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);

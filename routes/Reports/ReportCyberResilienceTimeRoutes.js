@@ -1,25 +1,25 @@
 const express = require("express");
 const auth = require("../../services/authServices");
 const {
-  createCyberResilienceTime,
-  getCyberResilienceTimes,
-  getCyberResilienceTime,
-  updateCyberResilienceTime,
-  deleteCyberResilienceTime,
-} = require("../../services/Reports/CyberResilienceTimeServices");
+  createReportCyberResilienceTime,
+  getReportCyberResilienceTimes,
+  getReportCyberResilienceTime,
+  updateReportCyberResilienceTime,
+  deleteReportCyberResilienceTime,
+} = require("../../services/Reports/ReportCyberResilienceTimeServices");
 
 const router = express.Router();
 
 router.use(auth.protect);
 
 router.use(auth.allowedTo("admin", "user", "soc", "executive"));
-router.route("/").get(getCyberResilienceTimes);
+router.route("/").get(getReportCyberResilienceTimes);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router.route("/:id").get(getCyberResilienceTime);
-router.route("/").post(createCyberResilienceTime);
+router.route("/:id").get(getReportCyberResilienceTime);
+router.route("/").post(createReportCyberResilienceTime);
 router
   .route("/:id")
-  .patch(updateCyberResilienceTime)
-  .delete(deleteCyberResilienceTime);
+  .patch(updateReportCyberResilienceTime)
+  .delete(deleteReportCyberResilienceTime);
 module.exports = router;

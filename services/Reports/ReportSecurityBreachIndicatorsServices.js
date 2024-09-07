@@ -11,14 +11,14 @@ exports.createReportSecurityBreachIndicators = factory.create(
 // @desc      Get Specific Non Compliance Gaps Overview by id
 // @route     GET /api/reports/security-breach-indicators/:id
 // @access    Public
-exports.getReportSecurityBreachIndicators = factory.getOne(
+exports.getReportSecurityBreachIndicator = factory.getOne(
   ReportSecurityBreachIndicators
 );
 
 // @desc      Get List Of Non Compliance Gaps Overview
 // @route     GET /api/reports/security-breach-indicators
 // @access    Public
-exports.getReportSecurityBreachIndicatorss = factory.getAll(
+exports.getReportSecurityBreachIndicators = factory.getAll(
   ReportSecurityBreachIndicators
 );
 
