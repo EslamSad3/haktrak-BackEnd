@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const QuarterlyIncident = new mongoose.Schema(
+const Quarterlyincident = new mongoose.Schema(
   {
     month: {
       type: String,
@@ -13,10 +13,11 @@ const QuarterlyIncident = new mongoose.Schema(
       required: [true, "Quarterly Incident Score required"],
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-QuarterlyIncident.index({ month: 1 }, { unique: true });
+Quarterlyincident.index({ month: 1 }, { unique: true });
 
-module.exports = mongoose.model("QuarterlyIncident", QuarterlyIncident);
+module.exports = mongoose.model("Quarterlyincident", Quarterlyincident);

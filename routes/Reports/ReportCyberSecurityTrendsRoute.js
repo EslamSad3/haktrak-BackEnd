@@ -6,7 +6,7 @@ const {
   getCyberSecurityTrends,
   updateCyberSecurityTrends,
   deleteCyberSecurityTrends,
-} = require("../../services/Executive_Dashboard/CyberSecurityTrendsServices");
+} = require("../../services/Reports/CyberSecurityTrendsServices");
 
 const router = express.Router();
 

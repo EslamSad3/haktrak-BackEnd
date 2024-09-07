@@ -6,7 +6,7 @@ const {
   getNonComplianceGapsOverview,
   updateNonComplianceGapsOverview,
   deleteNonComplianceGapsOverview,
-} = require("../../services/Executive_Dashboard/NonComplianceGapsOverviewServices");
+} = require("../../services/Reports/NonComplianceGapsOverviewServices");
 
 const router = express.Router();
 router.use(auth.protect);

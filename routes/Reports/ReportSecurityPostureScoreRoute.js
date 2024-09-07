@@ -6,8 +6,7 @@ const {
   getSecurityPostureScore,
   updateSecurityPostureScore,
   deleteSecurityPostureScore,
-} = require("../../services/Executive_Dashboard/SecurityPostureScoreServices");
-
+} = require("../../services/Reports/SecurityPostureScoreServices");
 
 const router = express.Router();
 
@@ -18,15 +17,11 @@ router.use(auth.allowedTo("admin", "user", "soc", "executive"));
 router.route("/").get(getSecurityPostureScores);
 
 router.use(auth.protect, auth.allowedTo("admin"));
-router
-  .route("/:id")
-  .get( getSecurityPostureScore);
+router.route("/:id").get(getSecurityPostureScore);
 
-router
-  .route("/")
-  .post( createSecurityPostureScore);
+router.route("/").post(createSecurityPostureScore);
 router
   .route("/:id")
-  .patch( updateSecurityPostureScore)
-  .delete( deleteSecurityPostureScore);
+  .patch(updateSecurityPostureScore)
+  .delete(deleteSecurityPostureScore);
 module.exports = router;

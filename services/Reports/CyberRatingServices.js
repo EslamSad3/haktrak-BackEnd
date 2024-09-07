@@ -1,5 +1,10 @@
+<<<<<<< HEAD:services/CyberRatingServices.js
 const CyberRating = require("../models/Executive_Dashboard/CyberRating");
 const factory = require("./handlersFactory");
+=======
+const CyberRating = require("../../models/Reports/CyberRating");
+const factory = require("../handlersFactory");
+>>>>>>> b406d9798a4e9cab0dd8e4053c42c69ae7f2da4a:services/Reports/CyberRatingServices.js
 
 // @desc      Create CyberRating
 // @route     POST /api/cyber-rating

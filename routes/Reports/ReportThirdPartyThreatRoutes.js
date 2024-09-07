@@ -6,7 +6,7 @@ const {
   getThirdPartyThreats,
   updateThirdPartyThreat,
   deleteThirdPartyThreat,
-} = require("../../services/Executive_Dashboard/ThirdPartyThreatServices");
+} = require("../../services/Reports/ThirdPartyThreatServices");
 
 const router = express.Router();
 

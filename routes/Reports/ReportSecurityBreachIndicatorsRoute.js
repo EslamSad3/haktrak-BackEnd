@@ -6,7 +6,7 @@ const {
   getSecurityBreachIndicators,
   updateSecurityBreachIndicators,
   deleteSecurityBreachIndicators,
-} = require("../../services/Executive_Dashboard/SecurityBreachIndicatorsServices");
+} = require("../../services/Reports/SecurityBreachIndicatorsServices");
 
 const router = express.Router();
 

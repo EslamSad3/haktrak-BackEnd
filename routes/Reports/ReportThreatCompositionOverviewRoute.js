@@ -6,7 +6,7 @@ const {
   getThreatCompositionOverview,
   updateThreatCompositionOverview,
   deleteThreatCompositionOverview,
-} = require("../../services/Executive_Dashboard/ThreatCompositionOverviewServices");
+} = require("../../services/Reports/ThreatCompositionOverviewServices");
 
 const router = express.Router();
 

@@ -6,7 +6,7 @@ const {
   getSupplyChainThreatExposures,
   updateSupplyChainThreatExposure,
   deleteSupplyChainThreatExposure,
-} = require("../../services/Executive_Dashboard/SupplyChainThreatExposureServices");
+} = require("../../services/Reports/SupplyChainThreatExposureServices");
 
 const router = express.Router();
 

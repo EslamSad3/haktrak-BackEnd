@@ -1,5 +1,10 @@
+<<<<<<< HEAD:services/AttackTrendServices.js
 const AttackTrend = require("../models/Executive_Dashboard/AttackTrend");
 const factory = require("./handlersFactory");
+=======
+const AttackTrend = require("../../models/Reports/AttackTrend");
+const factory = require("../handlersFactory");
+>>>>>>> b406d9798a4e9cab0dd8e4053c42c69ae7f2da4a:services/Reports/AttackTrendServices.js
 
 // @desc      Create AttackTrend
 // @route     POST /api/attack-trend

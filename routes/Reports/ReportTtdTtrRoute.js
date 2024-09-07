@@ -6,7 +6,7 @@ const {
   getTtdTtr,
   updateTtdTtr,
   deleteTtdTtr,
-} = require("../../services/Executive_Dashboard/TtdTtrServices");
+} = require("../../services/Reports/TtdTtrServices");
 
 const router = express.Router();
 

@@ -1,5 +1,10 @@
+<<<<<<< HEAD:services/MonthlyVolumeServices.js
 const MonthlyVolume = require("../models/Executive_Dashboard/QuarterlyVolume");
 const factory = require("./handlersFactory");
+=======
+const MonthlyVolume = require("../../models/Reports/MonthlyVolume");
+const factory = require("../handlersFactory");
+>>>>>>> b406d9798a4e9cab0dd8e4053c42c69ae7f2da4a:services/Reports/MonthlyVolumeServices.js
 
 // @desc      Create MonthlyVolume
 // @route     POST /api/monthly-volume

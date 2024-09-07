@@ -1,12 +1,12 @@
 const express = require("express");
-const auth = require("../services/authServices");
+const auth = require("../../services/authServices");
 const {
   createSecurityEvent,
   getSecurityEvent,
   getSecurityEvents,
   updateSecurityEvent,
   deleteSecurityEvent,
-} = require("../services/SecurityEventServices");
+} = require("../../services/Reports/SecurityEventServices");
 
 const router = express.Router();
 

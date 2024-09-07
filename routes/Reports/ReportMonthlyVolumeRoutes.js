@@ -1,12 +1,12 @@
 const express = require("express");
-const auth = require("../services/authServices");
+const auth = require("../../services/authServices");
 const {
   createMonthlyVolume,
   getMonthlyVolume,
   getMonthlyVolumes,
   updateMonthlyVolume,
   deleteMonthlyVolume,
-} = require("../services/MonthlyVolumeServices");
+} = require("../../services/Reports/MonthlyVolumeServices");
 
 const router = express.Router();
 

@@ -1,4 +1,4 @@
-const SecurityEvent = require("../models/Executive_Dashboard/SecurityEvent");
+const SecurityEvent = require("../models/Reports/SecurityEvent");
 const factory = require("./handlersFactory");
 
 // @desc      Create SecurityEvent

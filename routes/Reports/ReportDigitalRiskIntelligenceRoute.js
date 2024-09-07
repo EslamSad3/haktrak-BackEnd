@@ -6,7 +6,7 @@ const {
   getDigitalRiskIntelligence,
   updateDigitalRiskIntelligence,
   deleteDigitalRiskIntelligence,
-} = require("../../services/Executive_Dashboard/DigitalRiskIntelligenceServices");
+} = require("../../services/Reports/DigitalRiskIntelligenceServices");
 
 const router = express.Router();
 
