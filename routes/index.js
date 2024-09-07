@@ -143,11 +143,17 @@ const mountRoutes = (app) => {
     "/api/executive-dashboard/cyber-resilience-time",
     QuarterlyCyberResilienceTimeRoute
   );
-  app.use("/api/security-event", QuarterlySecurityEventRoute);
-  app.use("/api/monthly-volume", QuarterlyVolumeRoutes);
-  app.use("/api/cyber-rating", QuarterlyCyberRatingRoute);
-  app.use("/api/attack-trend", QuarterlyAttackTrendRoute);
-  app.use("/api/cyber-attack-trends", QuarterlyCyberAttackTrendsRoute);
+  app.use(
+    "/api/executive-dashboard/security-event",
+    QuarterlySecurityEventRoute
+  );
+  app.use("/api/executive-dashboard/monthly-volume", QuarterlyVolumeRoutes);
+  app.use("/api/executive-dashboard/cyber-rating", QuarterlyCyberRatingRoute);
+  app.use("/api/executive-dashboard/attack-trend", QuarterlyAttackTrendRoute);
+  app.use(
+    "/api/executive-dashboard/cyber-attack-trends",
+    QuarterlyCyberAttackTrendsRoute
+  );
   /*************************** Executive Dashboard *************** */
 
   app.use("/api/users", limiter, userRoute);
