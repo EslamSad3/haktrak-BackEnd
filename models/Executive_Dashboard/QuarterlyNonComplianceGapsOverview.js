@@ -16,7 +16,7 @@ const QuarterlyNonComplianceGapsOverview = new mongoose.Schema(
       required: [true, "Non Compliance Gaps Overview Score required"],
     },
     year: { type: String }, // Add year field
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
   },
   { timestamps: true }
 );

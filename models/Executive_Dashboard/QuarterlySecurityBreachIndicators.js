@@ -8,7 +8,7 @@ const QuarterlySecurityBreachIndicators = new mongoose.Schema(
       trim: true,
     },
     year: { type: String }, // Add year field
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
 
     score: {
       type: String,

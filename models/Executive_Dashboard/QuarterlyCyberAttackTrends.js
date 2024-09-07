@@ -13,6 +13,8 @@ const QuarterlyCyberAttackTrendsSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  quarter: { type: Number, required: [true, "quarter required"] },
+
   year: { type: String }, // Add year field
 });
 

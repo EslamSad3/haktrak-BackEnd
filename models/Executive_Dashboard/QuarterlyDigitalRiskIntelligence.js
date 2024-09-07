@@ -20,7 +20,7 @@ const QuarterlyDigitalRiskIntelligence = new mongoose.Schema(
     },
     year: { type: String }, // Add year field
     month: { type: String }, // Add month field
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
   },
   { timestamps: true }
 );

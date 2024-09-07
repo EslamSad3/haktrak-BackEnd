@@ -18,7 +18,7 @@ const QuarterlyThreatCompositionOverview = new mongoose.Schema(
       enum: ["Brute Force Attacks", "Insider Threats", "Malware/other Attacks"],
       required: [true, "Threat Composition Overview Compliance Type required"],
     },
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
   },
   { timestamps: true }
 );

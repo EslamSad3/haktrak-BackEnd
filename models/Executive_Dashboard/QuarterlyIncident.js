@@ -13,7 +13,7 @@ const Quarterlyincident = new mongoose.Schema(
       required: [true, "Quarterly Incident Score required"],
     },
     year: { type: String }, // Add year field
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
   },
   { timestamps: true }
 );

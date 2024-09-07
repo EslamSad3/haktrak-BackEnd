@@ -17,7 +17,7 @@ const QuarterlyTtdTtr = new mongoose.Schema(
       enum: ["TTD", "TTR"],
       required: [true, "TtdTtr Quarterly Compliance Type required"],
     },
-    quarter: { type: Number, required: true }, // Add quarter field
+    quarter: { type: Number, required: [true, "quarter required"] },
   },
   { timestamps: true }
 );

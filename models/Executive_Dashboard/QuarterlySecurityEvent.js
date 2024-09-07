@@ -8,6 +8,7 @@ const SecurityEventSchema = new mongoose.Schema({
   atoDarkWebASM: { type: String },
   month: { type: String },
   year: { type: String }, // Add year field
+  quarter: { type: Number, required: [true, "quarter required"] },
 });
 
 SecurityEventSchema.index(
