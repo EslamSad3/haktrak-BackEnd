@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CyberResilienceTime = new mongoose.Schema(
+const CyberResilienceTimeQuarterly = new mongoose.Schema(
   {
     hours: {
       type: String,
@@ -11,10 +11,14 @@ const CyberResilienceTime = new mongoose.Schema(
       required: [true, "Cyber Resilience Time month required"],
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-CyberResilienceTime.index({ hours: 1, month: 1 }, { unique: true });
+CyberResilienceTimeQuarterly.index({ hours: 1, month: 1 }, { unique: true });
 
-module.exports = mongoose.model("CyberResilienceTime", CyberResilienceTime);
+module.exports = mongoose.model(
+  "CyberResilienceTimeQuarterly",
+  CyberResilienceTimeQuarterly
+);

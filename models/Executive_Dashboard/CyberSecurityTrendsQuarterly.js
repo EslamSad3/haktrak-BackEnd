@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CyberSecurityTrends = new mongoose.Schema(
+const CyberSecurityTrendsQuarterly = new mongoose.Schema(
   {
     score: {
       type: String,
@@ -16,10 +16,17 @@ const CyberSecurityTrends = new mongoose.Schema(
     },
     year: { type: String }, // Add year field
     month: { type: String }, // Add month field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-CyberSecurityTrends.index({ indicator: 1, score: 1 }, { unique: true });
+CyberSecurityTrendsQuarterly.index(
+  { indicator: 1, score: 1 },
+  { unique: true }
+);
 
-module.exports = mongoose.model("CyberSecurityTrends", CyberSecurityTrends);
+module.exports = mongoose.model(
+  "CyberSecurityTrendsQuarterly",
+  CyberSecurityTrendsQuarterly
+);

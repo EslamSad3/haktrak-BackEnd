@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const SecurityPostureScore = new mongoose.Schema(
+const QuarterlySecurityPostureScore = new mongoose.Schema(
   {
     percentage: {
       type: String,
@@ -12,9 +12,16 @@ const SecurityPostureScore = new mongoose.Schema(
     },
     year: { type: String }, // Add year field
     month: { type: String }, // Add month field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
-SecurityPostureScore.index({ percentage: 1, score: 1 }, { unique: true });
+QuarterlySecurityPostureScore.index(
+  { percentage: 1, score: 1 },
+  { unique: true }
+);
 
-module.exports = mongoose.model("SecurityPostureScore", SecurityPostureScore);
+module.exports = mongoose.model(
+  "QuarterlySecurityPostureScore",
+  QuarterlySecurityPostureScore
+);

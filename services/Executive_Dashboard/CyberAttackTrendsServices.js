@@ -9,12 +9,12 @@ exports.createCyberAttackTrends = factory.create(CyberAttackTrends);
 // @desc      Get Specific Cyber Resilience Time by id
 // @route     GET /api/executive-dashboard/cyber-resilience-time/:id
 // @access    Public
-exports.getCyberAttackTrends = factory.getOne(CyberAttackTrends);
+exports.getCyberAttackTrend = factory.getOne(CyberAttackTrends);
 
 // @desc      Get List Of Cyber Resilience Time
 // @route     GET /api/executive-dashboard/cyber-resilience-time
 // @access    Public
-exports.getCyberAttackTrendss = factory.getAll(CyberAttackTrends);
+exports.getCyberAttackTrends = factory.getAll(CyberAttackTrends);
 
 // @desc      Update Cyber Resilience Time
 // @route     PATCH /api/executive-dashboard/cyber-resilience-time/:id

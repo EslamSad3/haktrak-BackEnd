@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const SecurityBreachIndicators = new mongoose.Schema(
+const QuarterlySecurityBreachIndicators = new mongoose.Schema(
   {
     month: {
       type: String,
@@ -8,6 +8,7 @@ const SecurityBreachIndicators = new mongoose.Schema(
       trim: true,
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
 
     score: {
       type: String,
@@ -27,9 +28,12 @@ const SecurityBreachIndicators = new mongoose.Schema(
   { timestamps: true }
 );
 
-SecurityBreachIndicators.index({ month: 1, indicator: 1 }, { unique: true });
+QuarterlySecurityBreachIndicators.index(
+  { month: 1, indicator: 1 },
+  { unique: true }
+);
 
 module.exports = mongoose.model(
-  "SecurityBreachIndicators",
-  SecurityBreachIndicators
+  "QuarterlySecurityBreachIndicators",
+  QuarterlySecurityBreachIndicators
 );

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const DigitalRiskIntelligence = new mongoose.Schema(
+const QuarterlyDigitalRiskIntelligence = new mongoose.Schema(
   {
     level: {
       type: String,
@@ -20,13 +20,17 @@ const DigitalRiskIntelligence = new mongoose.Schema(
     },
     year: { type: String }, // Add year field
     month: { type: String }, // Add month field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-DigitalRiskIntelligence.index({ indicator: 1, level: 1 }, { unique: true });
+QuarterlyDigitalRiskIntelligence.index(
+  { indicator: 1, level: 1 },
+  { unique: true }
+);
 
 module.exports = mongoose.model(
-  "DigitalRiskIntelligence",
-  DigitalRiskIntelligence
+  "QuarterlyDigitalRiskIntelligence",
+  QuarterlyDigitalRiskIntelligence
 );

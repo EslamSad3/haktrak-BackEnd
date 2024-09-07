@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ThreatCompositionOverview = new mongoose.Schema(
+const QuarterlyThreatCompositionOverview = new mongoose.Schema(
   {
     month: {
       type: String,
@@ -18,13 +18,17 @@ const ThreatCompositionOverview = new mongoose.Schema(
       enum: ["Brute Force Attacks", "Insider Threats", "Malware/other Attacks"],
       required: [true, "Threat Composition Overview Compliance Type required"],
     },
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-ThreatCompositionOverview.index({ month: 1, threatType: 1 }, { unique: true });
+QuarterlyThreatCompositionOverview.index(
+  { month: 1, threatType: 1 },
+  { unique: true }
+);
 
 module.exports = mongoose.model(
-  "ThreatCompositionOverview",
-  ThreatCompositionOverview
+  "QuarterlyThreatCompositionOverview",
+  QuarterlyThreatCompositionOverview
 );

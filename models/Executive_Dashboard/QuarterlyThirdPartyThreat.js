@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ThirdPartyThreat = new mongoose.Schema(
+const QuarterlyThirdPartyThreat = new mongoose.Schema(
   {
     thirdParty: {
       type: String,
@@ -13,10 +13,17 @@ const ThirdPartyThreat = new mongoose.Schema(
     },
     year: { type: String }, // Add year field
     month: { type: String }, // Add month field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-ThirdPartyThreat.index({ thirdParty: 1, severity: 1 }, { unique: true });
+QuarterlyThirdPartyThreat.index(
+  { thirdParty: 1, severity: 1 },
+  { unique: true }
+);
 
-module.exports = mongoose.model("ThirdPartyThreat", ThirdPartyThreat);
+module.exports = mongoose.model(
+  "QuarterlyThirdPartyThreat",
+  QuarterlyThirdPartyThreat
+);

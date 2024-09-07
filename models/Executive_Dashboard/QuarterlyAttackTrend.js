@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const AttackTrendSchema = new mongoose.Schema({
+const QuarterlyAttackTrendSchema = new mongoose.Schema({
   tactic: { type: String, required: true },
   techniqueId: { type: String, required: true },
   count: { type: Number, required: true },
@@ -8,6 +8,9 @@ const AttackTrendSchema = new mongoose.Schema({
   year: { type: String }, // Add year field
 });
 
-AttackTrendSchema.index({ tactic: 1, month: 1 }, { unique: true });
+QuarterlyAttackTrendSchema.index({ tactic: 1, month: 1 }, { unique: true });
 
-module.exports = mongoose.model("AttackTrend", AttackTrendSchema);
+module.exports = mongoose.model(
+  "QuarterlyAttackTrend",
+  QuarterlyAttackTrendSchema
+);

@@ -1,4 +1,4 @@
-const CyberRating = require("../../models/Executive_Dashboard/CyberRating");
+const CyberRating = require("../../models/Executive_Dashboard/QuarterlyCyberRating");
 const factory = require("../handlersFactory");
 
 // @desc      Create Cyber Resilience Time

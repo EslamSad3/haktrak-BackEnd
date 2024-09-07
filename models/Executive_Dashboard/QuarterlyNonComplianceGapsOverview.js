@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const NonComplianceGapsOverviewSchema = new mongoose.Schema(
+const QuarterlyNonComplianceGapsOverview = new mongoose.Schema(
   {
     month: {
       type: String,
@@ -16,17 +16,18 @@ const NonComplianceGapsOverviewSchema = new mongoose.Schema(
       required: [true, "Non Compliance Gaps Overview Score required"],
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
 // Add compound unique index on month and compliance
-NonComplianceGapsOverviewSchema.index(
+QuarterlyNonComplianceGapsOverview.index(
   { month: 1, compliance: 1 },
   { unique: true }
 );
 
 module.exports = mongoose.model(
-  "NonComplianceGapsOverview",
-  NonComplianceGapsOverviewSchema
+  "QuarterlyNonComplianceGapsOverview",
+  QuarterlyNonComplianceGapsOverview
 );

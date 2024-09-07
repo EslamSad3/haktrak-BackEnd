@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const SupplyChainThreatExposure = new mongoose.Schema(
+const QuarterlySupplyChainThreatExposure = new mongoose.Schema(
   {
     chain: {
       type: String,
@@ -16,13 +16,17 @@ const SupplyChainThreatExposure = new mongoose.Schema(
       required: [true, "Supply Chain Threat Exposure month required"],
     },
     year: { type: String }, // Add year field
+    quarter: { type: Number, required: true }, // Add quarter field
   },
   { timestamps: true }
 );
 
-SupplyChainThreatExposure.index({ chian: 1, severity: 1 }, { unique: true });
+QuarterlySupplyChainThreatExposure.index(
+  { chian: 1, severity: 1 },
+  { unique: true }
+);
 
 module.exports = mongoose.model(
-  "SupplyChainThreatExposure",
-  SupplyChainThreatExposure
+  "QuarterlySupplyChainThreatExposure",
+  QuarterlySupplyChainThreatExposure
 );
