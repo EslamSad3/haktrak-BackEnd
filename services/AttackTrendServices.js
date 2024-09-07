@@ -1,4 +1,4 @@
-const AttackTrend = require("../models/Reports/AttackTrend");
+const AttackTrend = require("../models/Executive_Dashboard/AttackTrend");
 const factory = require("./handlersFactory");
 
 // @desc      Create AttackTrend

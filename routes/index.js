@@ -27,7 +27,7 @@ const EDRXDRDetectionsRoute = require("./Detections/EDRXDRDetectionsRoute");
 // NDRDetection
 const NDRDetectionsRoute = require("./Detections/NDRDetectionsRoute");
 
-// Executive Dashboard
+/*************************** Executive Dashboard *************** */
 const SecurityPostureScoreRoute = require("./Executive_Dashboard/SecurityPostureScoreRoute");
 const NonComplianceGapsOverviewRoute = require("./Executive_Dashboard/NonComplianceGapsOverviewRoute");
 const ThreatCompositionOverviewRoute = require("./Executive_Dashboard/ThreatCompositionOverviewRoute");
@@ -36,19 +36,19 @@ const QuarterlyIncidentRoute = require("./Executive_Dashboard/QuarterlyIncidentR
 const TtdTtrRoute = require("./Executive_Dashboard/TtdTtrRoute");
 const DigitalRiskIntelligenceRoute = require("./Executive_Dashboard/DigitalRiskIntelligenceRoute");
 const CyberSecurityTrendsRoute = require("./Executive_Dashboard/CyberSecurityTrendsRoute");
-
-// Attack Secnarios
-const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
-const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
-const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRoutes");
-const SupplyChainThreatExposureRoute = require("./Executive_Dashboard/SupplyChainThreatExposureRoutes");
-
 const SecurityEventRoute = require("./SecurityEventRoutes");
 const MonthlyVolumeRoute = require("./MonthlyVolumeRoutes");
 const CyberRatingRoute = require("./CyberRatingRoutes");
 const AttackTrendRoute = require("./AttackTrendRoutes");
 const CyberAttackTrendsRoute = require("./CyberAttackTrendsRoutes");
 const CyberResilienceTimeRoute = require("./Executive_Dashboard/CyberResilienceTimeRoutes");
+const ThirdPartyThreatRoute = require("./Executive_Dashboard/ThirdPartyThreatRoutes");
+const SupplyChainThreatExposureRoute = require("./Executive_Dashboard/SupplyChainThreatExposureRoutes");
+/*************************** Executive Dashboard *************** */
+
+// Attack Secnarios
+const MitreAttacksRoute = require("./Attack_Scenarios/MitreAttacksRoute");
+const CyberKillChainRoute = require("./Attack_Scenarios/CyberKillChainRoute");
 
 const userRoute = require("./userRoute");
 const authRoute = require("./authRoute");
@@ -98,8 +98,10 @@ const mountRoutes = (app) => {
   app.use("/api/detections/edrxdr-detections", EDRXDRDetectionsRoute);
   // NDR Detections
   app.use("/api/detections/ndr-detections", NDRDetectionsRoute);
+  app.use("/api/attack-scenarios/mitre-attacks", MitreAttacksRoute);
+  app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
 
-  // Executive Dashboard
+  /*************************** Executive Dashboard *************** */
   app.use(
     "/api/executive-dashboard/security-posture-score",
     SecurityPostureScoreRoute
@@ -129,9 +131,6 @@ const mountRoutes = (app) => {
     "/api/executive-dashboard/cyber-security-trends",
     CyberSecurityTrendsRoute
   );
-  app.use("/api/attack-scenarios/mitre-attacks", MitreAttacksRoute);
-  app.use("/api/attack-scenarios/cyber-kill-chain", CyberKillChainRoute);
-
   app.use("/api/executive-dashboard/third-party-threat", ThirdPartyThreatRoute);
   app.use(
     "/api/executive-dashboard/supply-chain-threat-exposure",
@@ -141,12 +140,12 @@ const mountRoutes = (app) => {
     "/api/executive-dashboard/cyber-resilience-time",
     CyberResilienceTimeRoute
   );
-
   app.use("/api/security-event", SecurityEventRoute);
   app.use("/api/monthly-volume", MonthlyVolumeRoute);
   app.use("/api/cyber-rating", CyberRatingRoute);
   app.use("/api/attack-trend", AttackTrendRoute);
   app.use("/api/cyber-attack-trends", CyberAttackTrendsRoute);
+  /*************************** Executive Dashboard *************** */
 
   app.use("/api/users", limiter, userRoute);
   app.use("/api/auth", authRoute);

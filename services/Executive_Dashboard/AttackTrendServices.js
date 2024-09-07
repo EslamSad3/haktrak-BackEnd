@@ -1,28 +1,28 @@
-const CyberResilienceTime = require("../../models/Executive_Dashboard/CyberResilienceTime");
+const AttackTrend = require("../../models/Executive_Dashboard/AttackTrend");
 const factory = require("../handlersFactory");
 
 // @desc      Create Cyber Resilience Time
 // @route     POST /api/executive-dashboard/cyber-resilience-time
 // @access    private
-exports.createCyberResilienceTime = factory.create(CyberResilienceTime);
+exports.createAttackTrend = factory.create(AttackTrend);
 
 // @desc      Get Specific Cyber Resilience Time by id
 // @route     GET /api/executive-dashboard/cyber-resilience-time/:id
 // @access    Public
-exports.getCyberResilienceTime = factory.getOne(CyberResilienceTime);
+exports.getAttackTrend = factory.getOne(AttackTrend);
 
 // @desc      Get List Of Cyber Resilience Time
 // @route     GET /api/executive-dashboard/cyber-resilience-time
 // @access    Public
-exports.getCyberResilienceTimes = factory.getAll(CyberResilienceTime);
+exports.getAttackTrends = factory.getAll(AttackTrend);
 
 // @desc      Update Cyber Resilience Time
 // @route     PATCH /api/executive-dashboard/cyber-resilience-time/:id
 // @access    private
-exports.updateCyberResilienceTime = factory.updateOne(CyberResilienceTime);
+exports.updateAttackTrend = factory.updateOne(AttackTrend);
 
 // @desc      Delete Cyber Resilience Time
 // @route     DELETE /api/executive-dashboard/cyber-resilience-time/:id
 // @access    private
 
-exports.deleteCyberResilienceTime = factory.deleteOne(CyberResilienceTime);
+exports.deleteAttackTrend = factory.deleteOne(AttackTrend);

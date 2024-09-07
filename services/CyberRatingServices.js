@@ -1,4 +1,4 @@
-const CyberRating = require("../models/Reports/CyberRating");
+const CyberRating = require("../models/Executive_Dashboard/CyberRating");
 const factory = require("./handlersFactory");
 
 // @desc      Create CyberRating

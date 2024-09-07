@@ -1,4 +1,4 @@
-const CyberAttackTrends = require("../models/Reports/CyberAttackTrends");
+const CyberAttackTrends = require("../models/Executive_Dashboard/CyberAttackTrends");
 const factory = require("./handlersFactory");
 
 // @desc      Create CyberAttackTrends

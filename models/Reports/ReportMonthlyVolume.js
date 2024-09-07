@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const MonthlyVolumeSchema = new mongoose.Schema({
+const ReportMonthlyVolumeSchema = new mongoose.Schema({
   month: { type: String },
   year: { type: String }, // Add year field
 
@@ -13,7 +13,7 @@ const MonthlyVolumeSchema = new mongoose.Schema({
   thirdPartyLeaks: { type: String },
 });
 
-MonthlyVolumeSchema.index(
+ReportMonthlyVolumeSchema.index(
   {
     securityEvents: 1,
     alertVolume: 1,
@@ -27,4 +27,7 @@ MonthlyVolumeSchema.index(
   { unique: true }
 );
 
-module.exports = mongoose.model("MonthlyVolume", MonthlyVolumeSchema);
+module.exports = mongoose.model(
+  "ReportMonthlyVolume",
+  ReportMonthlyVolumeSchema
+);
