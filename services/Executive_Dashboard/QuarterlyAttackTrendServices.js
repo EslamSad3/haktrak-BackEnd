@@ -1,38 +1,28 @@
-const QuarterlyAttackTrendServices = require("../../models/Executive_Dashboard/AttackTrendQuarterly");
+const QuarterlyAttackTrend = require("../../models/Executive_Dashboard/QuarterlyAttackTrend");
 const factory = require("../handlersFactory");
 
-// @desc      Create QuarterlyAttackTrendServices
-// @route     POST /api/attack-trend
+// @desc      Create Cyber Resilience Time
+// @route     POST /api/executive-dashboard/cyber-resilience-time
 // @access    private
-exports.createQuarterlyAttackTrendServices = factory.create(
-  QuarterlyAttackTrendServices
-);
+exports.createQuarterlyAttackTrend = factory.create(QuarterlyAttackTrend);
 
-// @desc      Get Specific QuarterlyAttackTrendServices by id
-// @route     GET /api/attack-trend/:id
+// @desc      Get Specific Cyber Resilience Time by id
+// @route     GET /api/executive-dashboard/cyber-resilience-time/:id
 // @access    Public
-exports.getQuarterlyAttackTrendService = factory.getOne(
-  QuarterlyAttackTrendServices
-);
+exports.getQuarterlyAttackTrend = factory.getOne(QuarterlyAttackTrend);
 
-// @desc      Get List Of QuarterlyAttackTrendServices
-// @route     GET /api/attack-trend
+// @desc      Get List Of Cyber Resilience Time
+// @route     GET /api/executive-dashboard/cyber-resilience-time
 // @access    Public
-exports.getQuarterlyAttackTrendServices = factory.getAll(
-  QuarterlyAttackTrendServices
-);
+exports.getQuarterlyAttackTrends = factory.getAll(QuarterlyAttackTrend);
 
-// @desc      Update QuarterlyAttackTrendServices
-// @route     PATCH /api/attack-trend/:id
+// @desc      Update Cyber Resilience Time
+// @route     PATCH /api/executive-dashboard/cyber-resilience-time/:id
 // @access    private
-exports.updateQuarterlyAttackTrendServices = factory.updateOne(
-  QuarterlyAttackTrendServices
-);
+exports.updateQuarterlyAttackTrend = factory.updateOne(QuarterlyAttackTrend);
 
-// @desc      Delete QuarterlyAttackTrendServices
-// @route     DELETE /api/attack-trend/:id
+// @desc      Delete Cyber Resilience Time
+// @route     DELETE /api/executive-dashboard/cyber-resilience-time/:id
 // @access    private
 
-exports.deleteQuarterlyAttackTrendServices = factory.deleteOne(
-  QuarterlyAttackTrendServices
-);
+exports.deleteQuarterlyAttackTrend = factory.deleteOne(QuarterlyAttackTrend);
